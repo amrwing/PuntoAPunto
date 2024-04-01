@@ -7,11 +7,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Material(
       child: Scaffold(
-        body: Column(
-          children: [
-            Text("PuntoAPunto", style: TextStyle(fontSize: 20)),
-            Text("Bienvenidos a pene", style: TextStyle(fontSize: 15)),
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("PuntoAPunto", style: TextStyle(fontSize: 20)),
+              Text("Bienvenidos a pene", style: TextStyle(fontSize: 15)),
+            ],
+          ),
         ),
       ),
     );
