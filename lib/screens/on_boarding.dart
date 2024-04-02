@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
@@ -16,20 +18,24 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget build(BuildContext context) {
     return Material(
         child: Scaffold(
-      appBar: const CustomAppBar1(),
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        backgroundColor: const Color(0xFF265DA6),
+      ),
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "PuntoAPunto",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                  color: Color(0xFF265DA6)),
+            SvgPicture.asset(
+              height: 40,
+              width: 120,
+              'assets/logos/logo_coppel.svg',
             ),
+            const SizedBox(height: 10),
+            Image.asset('assets/logos/logo.jpg'),
+            const SizedBox(height: 10),
             const Text(
               "¡Lleva tu negocio al siguiente nivel!",
               textAlign: TextAlign.center,
