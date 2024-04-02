@@ -11,15 +11,20 @@ final GoRouter appRouter = GoRouter(
       },
     ),
     GoRoute(
-      path: '/onboarding_slideshow',
-      builder: (BuildContext context, GoRouterState state) {
-        return const OnBoardingSlideshow();
-      },
-    ),
+        path: '/onboarding_slideshow',
+        builder: (BuildContext context, GoRouterState state) {
+          return const OnBoardingSlideshow();
+        }),
     GoRoute(
       path: '/school',
       builder: (BuildContext context, GoRouterState state) {
         return const Escuela();
+      },
+    ),
+    GoRoute(
+      path: '/home_screen',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeScreen();
       },
     ),
   ],
