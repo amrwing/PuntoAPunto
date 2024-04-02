@@ -17,9 +17,9 @@ final GoRouter appRouter = GoRouter(
       },
     ),
     GoRoute(
-      path: '/onboarding_slideshow',
+      path: '/school',
       builder: (BuildContext context, GoRouterState state) {
-        return const OnBoardingSlideshow();
+        return const Escuela();
       },
     ),
   ],

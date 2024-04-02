@@ -15,98 +15,99 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        child: SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-          backgroundColor: const Color(0xFF265DA6),
-        ),
-        body: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                height: 40,
-                width: 120,
-                'assets/logos/logo_coppel.svg',
-              ),
-              const SizedBox(height: 10),
-              Image.asset('assets/logos/logo.jpg'),
-              const SizedBox(height: 30),
-              const Text(
-                "¡Lleva tu negocio al siguiente nivel!",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: Color(0xFF265DA6),
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: true,
+            backgroundColor: const Color(0xFF265DA6),
+          ),
+          body: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  height: 40,
+                  width: 120,
+                  'assets/logos/logo_coppel.svg',
                 ),
-              ),
-              const SizedBox(height: 30),
-              const Text(
-                "Aprende",
-                textAlign: TextAlign.center,
-                style: TextStyle(
+                const SizedBox(height: 10),
+                Image.asset('assets/logos/logo.jpg'),
+                const SizedBox(height: 30),
+                const Text(
+                  "¡Lleva tu negocio al siguiente nivel!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 18,
                     color: Color(0xFF265DA6),
-                    fontFamily: 'Milker'),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Crece",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                    color: Color(0xFF265DA6),
-                    fontFamily: 'Milker'),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Conecta",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                    color: Color(0xFF265DA6),
-                    fontFamily: 'Milker'),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.black,
-                    elevation: 15,
-                    backgroundColor: const Color.fromRGBO(254, 217, 37, 1),
-                    maximumSize: const Size(150, 50),
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
                   ),
-                  onPressed: () async {
-                    //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
-                    context.push("/onboarding_slideshow");
-                  },
-                  child: const Center(
-                    child: Text(
-                      "EMPEZAR YA",
-                      style: TextStyle(
-                          color: Color.fromRGBO(38, 93, 166, 1),
-                          fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 30),
+                const Text(
+                  "Aprende",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Color(0xFF265DA6),
+                      fontFamily: 'Milker'),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  "Crece",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Color(0xFF265DA6),
+                      fontFamily: 'Milker'),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  "Conecta",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Color(0xFF265DA6),
+                      fontFamily: 'Milker'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 50),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shadowColor: Colors.black,
+                      elevation: 15,
+                      backgroundColor: const Color.fromRGBO(254, 217, 37, 1),
+                      maximumSize: const Size(150, 50),
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                    ),
+                    onPressed: () async {
+                      //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
+                      context.push("/onboarding_slideshow");
+                    },
+                    child: const Center(
+                      child: Text(
+                        "EMPEZAR YA",
+                        style: TextStyle(
+                            color: Color.fromRGBO(38, 93, 166, 1),
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
+          ),
+          bottomNavigationBar: const BottomAppBar(
+            color: Color(0xFFFED925),
           ),
         ),
-        bottomNavigationBar: const BottomAppBar(
-          color: Color(0xFFFED925),
-        ),
       ),
-    ));
+    );
   }
 }
 
@@ -325,7 +326,7 @@ class _OnBoardingSlideshowState extends State<OnBoardingSlideshow> {
                                   ),
                                   onPressed: () async {
                                     //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
-                                    context.push("/onboarding_slideshow");
+                                    context.push("/school");
                                   },
                                   child: const Center(
                                     child: Text(
