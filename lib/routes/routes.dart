@@ -3,12 +3,17 @@ import 'package:go_router/go_router.dart';
 import 'package:punto_a_punto/screens/screens.dart';
 
 final GoRouter appRouter = GoRouter(
-  routes: <RouteBase>[
+  routes: [
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        return const HomeScreen();
+        return const OnBoardingScreen();
       },
     ),
+    GoRoute(
+        path: '/onboarding_slideshow',
+        builder: (BuildContext context, GoRouterState state) {
+          return const OnBoardingSlideshow();
+        }),
   ],
 );

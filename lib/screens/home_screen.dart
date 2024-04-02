@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return const Material(
       child: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("PuntoAPunto", style: TextStyle(fontSize: 20)),
-              Text("Bienvenidos a pene", style: TextStyle(fontSize: 15)),
-            ],
-          ),
-        ),
-      ),
+          body: Center(
+        child: Text("Homescreen"),
+      )),
     );
   }
 }
