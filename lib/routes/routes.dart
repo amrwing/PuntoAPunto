@@ -15,5 +15,10 @@ final GoRouter appRouter = GoRouter(
         builder: (BuildContext context, GoRouterState state) {
           return const OnBoardingSlideshow();
         }),
+    GoRoute(
+        path: '/home_screen',
+        builder: (BuildContext context, GoRouterState state) {
+          return const HomeScreen();
+        }),
   ],
 );
