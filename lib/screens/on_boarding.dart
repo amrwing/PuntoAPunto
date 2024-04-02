@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
-
 import '../widgets/widgets.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -72,6 +72,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 }
 
+//PAGINA DESPUES DE PRESIONAR EL BOTÓN
+
 class OnBoardingSlideshow extends StatefulWidget {
   const OnBoardingSlideshow({super.key});
 
@@ -104,29 +106,46 @@ class _OnBoardingSlideshowState extends State<OnBoardingSlideshow> {
         child: Scaffold(
       appBar: const CustomAppBar1(),
       body: SizedBox(
-        width: MediaQuery.of(context).size.width,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            PageView.builder(
-                itemCount: textosSlideshows.length,
-                itemBuilder: (context, index) {
-                  return Center(
-                    child: Text(textosSlideshows[index]),
-                  );
-                },
-                controller: _pageController,
-                onPageChanged: (int page) {
-                  setState(() {
-                    selectedPage = page;
-                  });
-                }),
+            Flexible(
+              flex: 1,
+              child: PageView.builder(
+                  itemCount: textosSlideshows.length,
+                  itemBuilder: (context, index) {
+                    return Expanded(
+                      child: Center(
+                        child: Text(textosSlideshows[index]),
+                      ),
+                    );
+                  },
+                  controller: _pageController,
+                  onPageChanged: (int page) {
+                    setState(() {
+                      selectedPage = page;
+                    });
+                  }),
+            ),
+            PageViewDotIndicator(
+              currentItem: selectedPage,
+              count: pageCount,
+              unselectedColor: Colors.black26,
+              selectedColor: Colors.blue,
+              duration: const Duration(milliseconds: 200),
+              boxShape: BoxShape.rectangle,
+              onItemClicked: (index) {
+                _pageController.animateToPage(
+                  index,
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            const SizedBox(
+              height: 80,
+            )
           ],
         ),
-      ),
-      bottomNavigationBar: const BottomAppBar(
-        color: Color(0xFFFED925),
       ),
     ));
   }
