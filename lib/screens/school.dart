@@ -10,7 +10,6 @@ class Escuela extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar1(),
-        body: ,
       ),
     );
   }
