@@ -6,8 +6,10 @@ class PerfilPersonal {
   String ciudad;
   String? rfc;
   String presentacion;
+  String? imagen;
   PerfilPersonal(
-      {required this.nombre,
+      {this.imagen,
+      required this.nombre,
       this.rfc = "N/A",
       required this.edad,
       required this.presentacion,

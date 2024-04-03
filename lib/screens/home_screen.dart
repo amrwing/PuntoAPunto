@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:punto_a_punto/models/perfil_empresa.dart';
 import 'package:punto_a_punto/models/perfil_personal.dart';
-import 'package:punto_a_punto/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -57,94 +57,49 @@ List<PerfilEmpresa> perfilesEmpresas = [
 //PERFILES DE PERSONAS CON FINES ILUSTRATIVOS
 List<PerfilPersonal> perfilesPersonales = [
   PerfilPersonal(
-    nombre: "Ana García",
-    edad: 28,
-    telefono: "555-1234",
-    estado: "Ciudad de México",
-    ciudad: "CDMX",
-    presentacion: "¡Hola! Soy Ana, una apasionada del diseño de interiores.",
-  ),
+      nombre: "Ana García",
+      edad: 28,
+      telefono: "555-1234",
+      estado: "Ciudad de México",
+      ciudad: "CDMX",
+      presentacion: "¡Hola! Soy Ana, una apasionada del diseño de interiores.",
+      imagen: "assets/images/anagarcia.jpg"),
   PerfilPersonal(
-    nombre: "Carlos Martínez",
-    edad: 35,
-    telefono: "555-5678",
-    estado: "Nuevo León",
-    ciudad: "Monterrey",
-    presentacion:
-        "¡Hola a todos! Me llamo Carlos y soy un ingeniero de software con experiencia en desarrollo móvil.",
-  ),
+      nombre: "Carlos Martínez",
+      edad: 35,
+      telefono: "555-5678",
+      estado: "Nuevo León",
+      ciudad: "Monterrey",
+      presentacion:
+          "¡Hola a todos! Me llamo Carlos y soy un ingeniero de software con experiencia en desarrollo móvil.",
+      imagen: "assets/images/carlosmartinez.jpg"),
   PerfilPersonal(
-    nombre: "Laura Rodríguez",
-    edad: 42,
-    telefono: "555-9012",
-    estado: "Jalisco",
-    ciudad: "Guadalajara",
-    presentacion:
-        "Saludos, soy Laura y me especializo en la gestión de proyectos de construcción.",
-  ),
+      nombre: "Laura Rodríguez",
+      edad: 42,
+      telefono: "555-9012",
+      estado: "Jalisco",
+      ciudad: "Guadalajara",
+      presentacion:
+          "Saludos, soy Laura y me especializo en la gestión de proyectos de construcción.",
+      imagen: "assets/images/laurarodriguez.jpg"),
   PerfilPersonal(
-    nombre: "Eduardo López",
-    edad: 30,
-    telefono: "555-3456",
-    estado: "Puebla",
-    ciudad: "Puebla",
-    presentacion:
-        "¡Hola! Mi nombre es Eduardo y soy un chef profesional con experiencia en cocina internacional.",
-  ),
+      nombre: "Eduardo López",
+      edad: 30,
+      telefono: "555-3456",
+      estado: "Puebla",
+      ciudad: "Puebla",
+      presentacion:
+          "¡Hola! Mi nombre es Eduardo y soy un chef profesional con experiencia en cocina internacional.",
+      imagen: "assets/images/eduardolopez.jpg"),
   PerfilPersonal(
-    nombre: "María Sánchez",
-    edad: 29,
-    telefono: "555-7890",
-    estado: "Veracruz",
-    ciudad: "Veracruz",
-    presentacion:
-        "Soy María y me dedico a la consultoría financiera para empresas pequeñas y medianas.",
-  ),
-  PerfilPersonal(
-    nombre: "Daniel Ramírez",
-    edad: 25,
-    telefono: "555-2345",
-    estado: "Querétaro",
-    ciudad: "Querétaro",
-    presentacion:
-        "¡Hola a todos! Soy Daniel y estoy buscando oportunidades laborales en el área de marketing digital.",
-  ),
-  PerfilPersonal(
-    nombre: "Fernanda Pérez",
-    edad: 31,
-    telefono: "555-6789",
-    estado: "Guanajuato",
-    ciudad: "León",
-    presentacion:
-        "Soy Fernanda, una diseñadora gráfica con pasión por la creatividad y la innovación.",
-  ),
-  PerfilPersonal(
-    nombre: "Alejandro González",
-    edad: 27,
-    telefono: "555-1234",
-    estado: "Michoacán",
-    ciudad: "Morelia",
-    presentacion:
-        "¡Hola! Me llamo Alejandro y soy un ingeniero civil con experiencia en diseño y construcción de infraestructuras.",
-  ),
-  PerfilPersonal(
-    nombre: "Paula Martínez",
-    edad: 33,
-    telefono: "555-5678",
-    estado: "Sinaloa",
-    ciudad: "Culiacán",
-    presentacion:
-        "Saludos, soy Paula y me dedico a la consultoría legal para empresas en temas laborales y de propiedad intelectual.",
-  ),
-  PerfilPersonal(
-    nombre: "Roberto Torres",
-    edad: 40,
-    telefono: "555-9012",
-    estado: "Tamaulipas",
-    ciudad: "Tampico",
-    presentacion:
-        "¡Hola! Mi nombre es Roberto y tengo experiencia en el sector financiero, especialmente en inversiones y gestión de patrimonio.",
-  ),
+      nombre: "María Sánchez",
+      edad: 29,
+      telefono: "555-7890",
+      estado: "Veracruz",
+      ciudad: "Veracruz",
+      presentacion:
+          "Soy María y me dedico a la consultoría financiera para empresas pequeñas y medianas.",
+      imagen: "assets/images/mariasanchez.jpg"),
 ];
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -152,7 +107,35 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
-        appBar: const CustomAppBar1(),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: const Color(0xFF265DA6),
+          actions: [
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        top: 10,
+                        bottom: 8,
+                      ),
+                      child: SvgPicture.asset(
+                        width: 80,
+                        height: 40,
+                        'assets/logos/fundacion_coppel.svg', // Ruta del archivo SVG en assets
+                      ),
+                    ),
+                    onTap: () {
+                      //AL TAPEAR EL LOGO DE ARRIBA A LA IZQUIERDA
+                    },
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
         body: SafeArea(
           child: Center(
             child: SingleChildScrollView(
@@ -231,11 +214,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Image.asset(
                                     perfilesEmpresas[index].imagen ??
-                                        "assets/images/loading.jpg",
+                                        "assets/images/loading.gif",
                                     fit: BoxFit.scaleDown,
                                   ),
                                   SizedBox(
@@ -259,27 +242,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                   const Expanded(child: SizedBox()),
                                   Align(
-                                    alignment: Alignment.bottomRight,
+                                    alignment: Alignment.centerLeft,
                                     child: TextButton(
-                                        onPressed: () {
-                                          //LLEVAR A PAGINA DE PROVEEDOR
-                                        },
-                                        child: Row(
-                                          children: [
-                                            TextButton(
-                                              onPressed: () {},
-                                              child: const Text(
-                                                "Me interesa",
-                                                style: TextStyle(
-                                                    color: Colors.black),
-                                              ),
-                                            ),
-                                            const Icon(
-                                              Icons.arrow_forward,
-                                              color: Colors.black,
-                                            ),
-                                          ],
-                                        )),
+                                      onPressed: () {
+                                        //LLEVAR A PAGINA DE PROVEEDOR
+                                      },
+                                      child: const Row(
+                                        children: [
+                                          Text(
+                                            "Me interesa",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          Icon(
+                                            Icons.arrow_forward,
+                                            color: Colors.black,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -303,26 +284,67 @@ class _HomeScreenState extends State<HomeScreen> {
                         )),
                   ),
                   SizedBox(
-                    height: 180,
+                    height: 300,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0, bottom: 20),
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: perfilesPersonales.length,
+                        itemCount: perfilesEmpresas.length,
                         itemBuilder: (context, index) => Card(
+                          elevation: 3,
+                          color: Colors.white,
                           child: SizedBox(
                             width: 200,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Image.asset(
+                                    perfilesPersonales[index].imagen ??
+                                        "assets/images/loading.gif",
+                                    fit: BoxFit.scaleDown,
+                                  ),
                                   SizedBox(
-                                    height: 20,
-                                    child: Text(
-                                      perfilesPersonales[index].nombre,
-                                      style: const TextStyle(
-                                          fontWeight: FontWeight.bold),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          perfilesPersonales[index].nombre,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Text(
+                                          perfilesPersonales[index]
+                                              .presentacion,
+                                          style: const TextStyle(fontSize: 10),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  const Expanded(child: SizedBox()),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: TextButton(
+                                      onPressed: () {
+                                        //LLEVAR A PAGINA DE PROVEEDOR
+                                      },
+                                      child: const Row(
+                                        children: [
+                                          Text(
+                                            "Me interesa",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          Icon(
+                                            Icons.arrow_forward,
+                                            color: Colors.black,
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ],
