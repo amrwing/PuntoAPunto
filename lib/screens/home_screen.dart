@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:punto_a_punto/global/global.dart';
 import 'package:punto_a_punto/models/perfil_empresa.dart';
 import 'package:punto_a_punto/models/perfil_personal.dart';
+import 'package:punto_a_punto/models/producto.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,41 +20,196 @@ List<PerfilEmpresa> perfilesEmpresas = [
       rfc: "ABC123456DEF",
       regimen: "Personas Morales",
       sector: "Construcción",
-      productos: ["Materiales de construcción", "Herramientas", "Maquinaria"],
+      productos: [
+        Producto(
+          nombre: "Ladrillos",
+          descripcion: "Ladrillos de alta calidad para construcción",
+          precioMayoreo: 50.0,
+          precioUnidad: 60.0,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 semanas", "3-4 semanas"],
+        ),
+        Producto(
+          nombre: "Martillos",
+          descripcion: "Martillos resistentes para todo tipo de trabajos",
+          precioMayoreo: 20.0,
+          precioUnidad: 25.0,
+          metodoEntrega: "Envío por paquetería",
+          plazosDeEntrega: ["3-5 días", "1 semana"],
+        ),
+        Producto(
+          nombre: "Excavadoras",
+          descripcion: "Excavadoras de gran potencia para obras grandes",
+          precioMayoreo: 50000.0,
+          precioUnidad: 55000.0,
+          metodoEntrega: "Entrega a domicilio con instalación",
+          plazosDeEntrega: ["2-3 semanas", "1 mes"],
+        ),
+      ],
       slogan: "Construyendo tus sueños",
-      imagen: "assets/images/constructoratorres.jpg"),
+      imagen: "assets/images/constructoratorres.jpg",
+      telefonoContacto: "555-123-4567"),
   PerfilEmpresa(
       nombre: "Tecnología Avanzada SA de CV",
       rfc: "XYZ987654POI",
       regimen: "Personas Morales",
       sector: "Tecnología",
-      productos: ["Computadoras", "Laptops", "Tablets", "Accesorios"],
+      productos: [
+        Producto(
+          nombre: "PC Gamer",
+          descripcion: "Computadora potente diseñada para juegos",
+          precioMayoreo: 3000.0,
+          precioUnidad: 3500.0,
+          metodoEntrega: "Envío por mensajería",
+          plazosDeEntrega: ["1-2 días", "3-5 días"],
+        ),
+        Producto(
+          nombre: "Laptop Ultrabook",
+          descripcion: "Laptop ligera y potente para uso diario",
+          precioMayoreo: 1500.0,
+          precioUnidad: 1700.0,
+          metodoEntrega: "Entrega personalizada",
+          plazosDeEntrega: ["2-3 días", "1 semana"],
+        ),
+        Producto(
+          nombre: "Tablet Android",
+          descripcion: "Tablet con sistema operativo Android",
+          precioMayoreo: 300.0,
+          precioUnidad: 350.0,
+          metodoEntrega: "Envío por paquetería",
+          plazosDeEntrega: ["3-5 días", "1 semana"],
+        ),
+        Producto(
+          nombre: "Teclado Gaming",
+          descripcion: "Teclado mecánico diseñado para juegos",
+          precioMayoreo: 50.0,
+          precioUnidad: 60.0,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 días", "3-4 días"],
+        ),
+      ],
       slogan: "Innovación al alcance de todos",
-      imagen: "assets/images/tecnologiaavanzada.jpg"),
+      imagen: "assets/images/tecnologiaavanzada.jpg",
+      telefonoContacto: "555-987-6543"),
   PerfilEmpresa(
       nombre: "Dulces Delicias",
       rfc: "LMN456789GHI",
       regimen: "Personas Morales",
       sector: "Alimentación",
-      productos: ["Pasteles", "Galletas", "Dulces", "Postres"],
+      productos: [
+        Producto(
+          nombre: "Pastel de Chocolate",
+          descripcion: "Delicioso pastel de chocolate con cobertura cremosa",
+          precioMayoreo: 30.0,
+          precioUnidad: 35.0,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 días", "3-4 días"],
+        ),
+        Producto(
+          nombre: "Galletas de Avena",
+          descripcion: "Galletas crujientes de avena con trozos de chocolate",
+          precioMayoreo: 15.0,
+          precioUnidad: 18.0,
+          metodoEntrega: "Envío por paquetería",
+          plazosDeEntrega: ["2-3 días", "1 semana"],
+        ),
+        Producto(
+          nombre: "Paletas de Caramelo",
+          descripcion: "Paletas de caramelo de diferentes sabores",
+          precioMayoreo: 5.0,
+          precioUnidad: 7.0,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 días", "3-4 días"],
+        ),
+        Producto(
+          nombre: "Tarta de Frutas",
+          descripcion: "Tarta fresca de frutas de temporada",
+          precioMayoreo: 40.0,
+          precioUnidad: 45.0,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["2-3 días", "1 semana"],
+        ),
+      ],
       slogan: "Endulzando tu vida",
-      imagen: "assets/images/dulcesdelicias.jpg"),
+      imagen: "assets/images/dulcesdelicias.jpg",
+      telefonoContacto: "555-456-7890"),
   PerfilEmpresa(
       nombre: "Energía Solar SA de CV",
       rfc: "PQR123456JKL",
       regimen: "Personas Morales",
       sector: "Energía Renovable",
-      productos: ["Paneles solares", "Calentadores solares", "Baterías"],
+      productos: [
+        Producto(
+          nombre: "Panel Solar de 100W",
+          descripcion: "Panel solar monocristalino de alta eficiencia",
+          precioMayoreo: 200.0,
+          precioUnidad: 220.0,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 semanas", "3-4 semanas"],
+        ),
+        Producto(
+          nombre: "Calentador Solar para Agua",
+          descripcion: "Calentador solar de agua con capacidad para 100 litros",
+          precioMayoreo: 500.0,
+          precioUnidad: 550.0,
+          metodoEntrega: "Envío por paquetería",
+          plazosDeEntrega: ["2-3 semanas", "1 mes"],
+        ),
+        Producto(
+          nombre: "Batería de Ciclo Profundo",
+          descripcion:
+              "Batería de ciclo profundo para sistemas de energía solar",
+          precioMayoreo: 300.0,
+          precioUnidad: 330.0,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 semanas", "3-4 semanas"],
+        ),
+      ],
       slogan: "Energía limpia para un futuro sostenible",
-      imagen: "assets/images/energiasolar.jpg"),
+      imagen: "assets/images/energiasolar.jpg",
+      telefonoContacto: "555-321-0987"),
   PerfilEmpresa(
       nombre: "Agricultura Verde SA",
       rfc: "FGH987654LMN",
       regimen: "Personas Morales",
       sector: "Agricultura",
-      productos: ["Frutas", "Verduras", "Cereales", "Hortalizas"],
+      productos: [
+        Producto(
+          nombre: "Manzanas",
+          descripcion: "Manzanas frescas y jugosas",
+          precioMayoreo: 1.5,
+          precioUnidad: 2.0,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 días", "3-4 días"],
+        ),
+        Producto(
+          nombre: "Lechuga",
+          descripcion: "Lechuga orgánica recién cosechada",
+          precioMayoreo: 0.5,
+          precioUnidad: 0.7,
+          metodoEntrega: "Envío por paquetería",
+          plazosDeEntrega: ["2-3 días", "1 semana"],
+        ),
+        Producto(
+          nombre: "Arroz Integral",
+          descripcion: "Arroz integral de cultivo ecológico",
+          precioMayoreo: 2.0,
+          precioUnidad: 2.5,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 semanas", "3-4 semanas"],
+        ),
+        Producto(
+          nombre: "Tomates",
+          descripcion: "Tomates maduros y sabrosos",
+          precioMayoreo: 1.0,
+          precioUnidad: 1.5,
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["1-2 días", "3-4 días"],
+        ),
+      ],
       slogan: "Cultivando la salud y el bienestar",
-      imagen: "assets/images/agriculturaverdesa.jpeg"),
+      imagen: "assets/images/agriculturaverdesa.jpeg",
+      telefonoContacto: "555-876-5432"),
 ];
 
 //PERFILES DE PERSONAS CON FINES ILUSTRATIVOS
@@ -62,7 +220,8 @@ List<PerfilPersonal> perfilesPersonales = [
       telefono: "555-1234",
       estado: "Ciudad de México",
       ciudad: "CDMX",
-      presentacion: "¡Hola! Soy Ana, una apasionada del diseño de interiores.",
+      presentacion:
+          "¡Hola! Soy Ana, una apasionada del diseño de interiores y emprendedora en el mundo del diseño de muebles y decoración.",
       imagen: "assets/images/anagarcia.jpg"),
   PerfilPersonal(
       nombre: "Carlos Martínez",
@@ -71,7 +230,7 @@ List<PerfilPersonal> perfilesPersonales = [
       estado: "Nuevo León",
       ciudad: "Monterrey",
       presentacion:
-          "¡Hola a todos! Me llamo Carlos y soy un ingeniero de software con experiencia en desarrollo móvil.",
+          "¡Hola a todos! Me llamo Carlos y soy un ingeniero de software con experiencia en desarrollo móvil. También estoy involucrado en proyectos de emprendimiento tecnológico.",
       imagen: "assets/images/carlosmartinez.jpg"),
   PerfilPersonal(
       nombre: "Laura Rodríguez",
@@ -80,7 +239,7 @@ List<PerfilPersonal> perfilesPersonales = [
       estado: "Jalisco",
       ciudad: "Guadalajara",
       presentacion:
-          "Saludos, soy Laura y me especializo en la gestión de proyectos de construcción.",
+          "Saludos, soy Laura y me especializo en la gestión de proyectos de construcción. Además, soy fundadora de una empresa de construcción innovadora y sostenible.",
       imagen: "assets/images/laurarodriguez.jpg"),
   PerfilPersonal(
       nombre: "Eduardo López",
@@ -89,7 +248,7 @@ List<PerfilPersonal> perfilesPersonales = [
       estado: "Puebla",
       ciudad: "Puebla",
       presentacion:
-          "¡Hola! Mi nombre es Eduardo y soy un chef profesional con experiencia en cocina internacional.",
+          "¡Hola! Mi nombre es Eduardo y soy un chef profesional con experiencia en cocina internacional. Actualmente estoy trabajando en el lanzamiento de mi propio restaurante gourmet.",
       imagen: "assets/images/eduardolopez.jpg"),
   PerfilPersonal(
       nombre: "María Sánchez",
@@ -98,9 +257,11 @@ List<PerfilPersonal> perfilesPersonales = [
       estado: "Veracruz",
       ciudad: "Veracruz",
       presentacion:
-          "Soy María y me dedico a la consultoría financiera para empresas pequeñas y medianas.",
+          "Soy María y me dedico a la consultoría financiera para empresas pequeñas y medianas. También soy emprendedora y estoy lanzando mi propia firma de consultoría especializada en startups.",
       imagen: "assets/images/mariasanchez.jpg"),
 ];
+final TextEditingController searchBarTextField = TextEditingController();
+final focusNode = FocusNode();
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -158,6 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: TextButton(
                               onPressed: () {
                                 //LLEVAR A PAGINA DE MIS CONTRATOS
+                                context.push("/contracts_screen");
                               },
                               child: const Text(
                                 "Mis contratos",
@@ -168,6 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: TextButton(
                               onPressed: () {
                                 //LLEVAR A PAGINA DE MIS CURSOS
+                                context.push("/register_screen");
                               },
                               child: const Text(
                                 "Mis cursos",
@@ -190,12 +353,34 @@ class _HomeScreenState extends State<HomeScreen> {
                   const Divider(
                     thickness: 1,
                   ),
+                  SizedBox(
+                      width: 360,
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.search,
+                            size: 30,
+                          ),
+                          SizedBox(
+                              width: 300,
+                              height: 40,
+                              child: TextField(
+                                focusNode: focusNode,
+                                onTapOutside: (event) => focusNode.unfocus(),
+                                decoration: const InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(2)))),
+                                controller: searchBarTextField,
+                              )),
+                        ],
+                      )),
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Proveedores",
+                          "Podría interesarte",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
                   ),
@@ -217,8 +402,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Image.asset(
-                                    perfilesEmpresas[index].imagen ??
-                                        "assets/images/loading.gif",
+                                    perfilesEmpresas[index].imagen,
                                     fit: BoxFit.scaleDown,
                                   ),
                                   SizedBox(
@@ -234,7 +418,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         Text(
-                                          perfilesEmpresas[index].slogan!,
+                                          perfilesEmpresas[index].slogan,
                                           style: const TextStyle(fontSize: 10),
                                         )
                                       ],
@@ -246,6 +430,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: TextButton(
                                       onPressed: () {
                                         //LLEVAR A PAGINA DE PROVEEDOR
+                                        empresaSeleccionada["imagen"] =
+                                            perfilesEmpresas[index].imagen;
+                                        empresaSeleccionada["nombre"] =
+                                            perfilesEmpresas[index].nombre;
+                                        empresaSeleccionada["productos"] =
+                                            perfilesEmpresas[index].productos;
+                                        empresaSeleccionada["regimen"] =
+                                            perfilesEmpresas[index].regimen;
+                                        empresaSeleccionada["sector"] =
+                                            perfilesEmpresas[index].sector;
+                                        empresaSeleccionada["slogan"] =
+                                            perfilesEmpresas[index].slogan;
+                                        empresaSeleccionada[
+                                                "telefonoContacto"] =
+                                            perfilesEmpresas[index]
+                                                .telefonoContacto;
+                                        context.push("/custom_provider_screen");
                                       },
                                       child: const Row(
                                         children: [
@@ -271,7 +472,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   const Divider(
-                    height: 80,
+                    height: 50,
                     thickness: 1,
                   ),
                   const Padding(
@@ -279,7 +480,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Conoce más",
+                          "Conoce a emprendedores",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
                   ),
@@ -335,7 +536,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: const Row(
                                         children: [
                                           Text(
-                                            "Me interesa",
+                                            "Conocer más",
                                             style:
                                                 TextStyle(color: Colors.black),
                                           ),
@@ -354,6 +555,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 20,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width,

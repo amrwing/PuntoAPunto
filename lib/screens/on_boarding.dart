@@ -336,6 +336,7 @@ class _OnBoardingSlideshowState extends State<OnBoardingSlideshow> {
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ),

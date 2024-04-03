@@ -1,17 +1,23 @@
+import 'package:punto_a_punto/models/producto.dart';
+
 class PerfilEmpresa {
   String nombre;
-  String? rfc;
-  String? regimen;
+  String rfc;
+  String regimen;
   String sector;
-  List<String> productos;
-  String? slogan;
-  String? imagen;
-  PerfilEmpresa(
-      {required this.nombre,
-      this.imagen,
-      this.rfc,
-      this.regimen,
-      this.slogan,
-      required this.productos,
-      required this.sector});
+  List<Producto> productos;
+  String slogan;
+  String imagen;
+  String telefonoContacto;
+
+  PerfilEmpresa({
+    required this.nombre,
+    required this.rfc,
+    required this.regimen,
+    required this.sector,
+    required this.productos,
+    required this.slogan,
+    required this.imagen,
+    required this.telefonoContacto,
+  });
 }

@@ -20,5 +20,25 @@ final GoRouter appRouter = GoRouter(
         builder: (BuildContext context, GoRouterState state) {
           return const HomeScreen();
         }),
+    GoRoute(
+        path: '/contracts_screen',
+        builder: (BuildContext context, GoRouterState state) {
+          return ContractsScreen();
+        }),
+    GoRoute(
+        path: '/custom_provider_screen',
+        builder: (BuildContext context, GoRouterState state) {
+          return const CustomProviderScreen();
+        }),
+    GoRoute(
+        path: '/register_screen',
+        builder: (BuildContext context, GoRouterState state) {
+          return const RegisterScreen();
+        }),
+    GoRoute(
+        path: '/stablish_contract_screen',
+        builder: (BuildContext context, GoRouterState state) {
+          return const StablishContractScreen();
+        }),
   ],
 );
