@@ -26,24 +26,24 @@ List<PerfilEmpresa> perfilesEmpresas = [
           descripcion: "Ladrillos de alta calidad para construcción",
           precioMayoreo: 50.0,
           precioUnidad: 60.0,
-          metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 semanas", "3-4 semanas"],
+          metodoEntrega: "A domicilio por parte de la empresa",
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
           nombre: "Martillos",
           descripcion: "Martillos resistentes para todo tipo de trabajos",
           precioMayoreo: 20.0,
           precioUnidad: 25.0,
-          metodoEntrega: "Envío por paquetería",
-          plazosDeEntrega: ["3-5 días", "1 semana"],
+          metodoEntrega: "A domicilio por parte de la empresa",
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
           nombre: "Excavadoras",
           descripcion: "Excavadoras de gran potencia para obras grandes",
           precioMayoreo: 50000.0,
           precioUnidad: 55000.0,
-          metodoEntrega: "Entrega a domicilio con instalación",
-          plazosDeEntrega: ["2-3 semanas", "1 mes"],
+          metodoEntrega: "A domicilio por parte de la empresa",
+          plazosDeEntrega: ["Por solicitud"],
         ),
       ],
       slogan: "Construyendo tus sueños",
@@ -61,31 +61,31 @@ List<PerfilEmpresa> perfilesEmpresas = [
           precioMayoreo: 3000.0,
           precioUnidad: 3500.0,
           metodoEntrega: "Envío por mensajería",
-          plazosDeEntrega: ["1-2 días", "3-5 días"],
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
           nombre: "Laptop Ultrabook",
           descripcion: "Laptop ligera y potente para uso diario",
           precioMayoreo: 1500.0,
           precioUnidad: 1700.0,
-          metodoEntrega: "Entrega personalizada",
-          plazosDeEntrega: ["2-3 días", "1 semana"],
+          metodoEntrega: "Envío por mensajería",
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
           nombre: "Tablet Android",
           descripcion: "Tablet con sistema operativo Android",
           precioMayoreo: 300.0,
           precioUnidad: 350.0,
-          metodoEntrega: "Envío por paquetería",
-          plazosDeEntrega: ["3-5 días", "1 semana"],
+          metodoEntrega: "Envío por mensajería",
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
           nombre: "Teclado Gaming",
           descripcion: "Teclado mecánico diseñado para juegos",
           precioMayoreo: 50.0,
           precioUnidad: 60.0,
-          metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 días", "3-4 días"],
+          metodoEntrega: "Envío por mensajería",
+          plazosDeEntrega: ["Por solicitud"],
         ),
       ],
       slogan: "Innovación al alcance de todos",
@@ -103,15 +103,15 @@ List<PerfilEmpresa> perfilesEmpresas = [
           precioMayoreo: 30.0,
           precioUnidad: 35.0,
           metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 días", "3-4 días"],
+          plazosDeEntrega: ["Cada 3 días", "Cada 7 días", "Cada 15 días"],
         ),
         Producto(
           nombre: "Galletas de Avena",
           descripcion: "Galletas crujientes de avena con trozos de chocolate",
           precioMayoreo: 15.0,
           precioUnidad: 18.0,
-          metodoEntrega: "Envío por paquetería",
-          plazosDeEntrega: ["2-3 días", "1 semana"],
+          metodoEntrega: "Entrega a domicilio",
+          plazosDeEntrega: ["Cada 3 días", "Cada 7 días", "Cada 15 días"],
         ),
         Producto(
           nombre: "Paletas de Caramelo",
@@ -119,7 +119,7 @@ List<PerfilEmpresa> perfilesEmpresas = [
           precioMayoreo: 5.0,
           precioUnidad: 7.0,
           metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 días", "3-4 días"],
+          plazosDeEntrega: ["Cada 7 días", "Cada 15 días"],
         ),
         Producto(
           nombre: "Tarta de Frutas",
@@ -127,7 +127,7 @@ List<PerfilEmpresa> perfilesEmpresas = [
           precioMayoreo: 40.0,
           precioUnidad: 45.0,
           metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["2-3 días", "1 semana"],
+          plazosDeEntrega: ["Cada 3 días", "Cada 7 días", "Cada 15 días"],
         ),
       ],
       slogan: "Endulzando tu vida",
@@ -144,16 +144,16 @@ List<PerfilEmpresa> perfilesEmpresas = [
           descripcion: "Panel solar monocristalino de alta eficiencia",
           precioMayoreo: 200.0,
           precioUnidad: 220.0,
-          metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 semanas", "3-4 semanas"],
+          metodoEntrega: "A domicilio por parte de la empresa",
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
           nombre: "Calentador Solar para Agua",
           descripcion: "Calentador solar de agua con capacidad para 100 litros",
           precioMayoreo: 500.0,
           precioUnidad: 550.0,
-          metodoEntrega: "Envío por paquetería",
-          plazosDeEntrega: ["2-3 semanas", "1 mes"],
+          metodoEntrega: "A domicilio por parte de la empresa",
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
           nombre: "Batería de Ciclo Profundo",
@@ -161,8 +161,8 @@ List<PerfilEmpresa> perfilesEmpresas = [
               "Batería de ciclo profundo para sistemas de energía solar",
           precioMayoreo: 300.0,
           precioUnidad: 330.0,
-          metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 semanas", "3-4 semanas"],
+          metodoEntrega: "A domicilio por parte de la empresa",
+          plazosDeEntrega: ["Por solicitud"],
         ),
       ],
       slogan: "Energía limpia para un futuro sostenible",
@@ -180,7 +180,7 @@ List<PerfilEmpresa> perfilesEmpresas = [
           precioMayoreo: 1.5,
           precioUnidad: 2.0,
           metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 días", "3-4 días"],
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
           nombre: "Lechuga",
@@ -188,15 +188,15 @@ List<PerfilEmpresa> perfilesEmpresas = [
           precioMayoreo: 0.5,
           precioUnidad: 0.7,
           metodoEntrega: "Envío por paquetería",
-          plazosDeEntrega: ["2-3 días", "1 semana"],
+          plazosDeEntrega: ["Por solicitud"],
         ),
         Producto(
-          nombre: "Arroz Integral",
+          nombre: "Arroz Integral (KG)",
           descripcion: "Arroz integral de cultivo ecológico",
           precioMayoreo: 2.0,
           precioUnidad: 2.5,
           metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 semanas", "3-4 semanas"],
+          plazosDeEntrega: ["Cada 3 días", "Cada 7 días", "Cada 15 días"],
         ),
         Producto(
           nombre: "Tomates",
@@ -204,7 +204,7 @@ List<PerfilEmpresa> perfilesEmpresas = [
           precioMayoreo: 1.0,
           precioUnidad: 1.5,
           metodoEntrega: "Entrega a domicilio",
-          plazosDeEntrega: ["1-2 días", "3-4 días"],
+          plazosDeEntrega: ["Cada 3 días", "Cada 7 días", "Cada 15 días"],
         ),
       ],
       slogan: "Cultivando la salud y el bienestar",
@@ -298,302 +298,300 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         body: SafeArea(
-          child: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8.0),
-                    child: Text(
-                      "¡Bienvenido!\nQueremos darte lo mejor",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    "¡Bienvenido!\nQueremos darte lo mejor",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Card(
+                        child: TextButton(
+                            onPressed: () {
+                              //LLEVAR A PAGINA DE MIS CONTRATOS
+                              context.push("/contracts_screen");
+                            },
+                            child: const Text(
+                              "Mis contratos",
+                              style: TextStyle(color: Colors.black),
+                            )),
+                      ),
+                      Card(
+                        child: TextButton(
+                            onPressed: () {
+                              //LLEVAR A PAGINA DE MIS CURSOS
+                              context.push("/register_screen");
+                            },
+                            child: const Text(
+                              "Mis cursos",
+                              style: TextStyle(color: Colors.black),
+                            )),
+                      ),
+                      Card(
+                        child: TextButton(
+                            onPressed: () {
+                              //LLEVAR A PAGINA DE MIS CURSOS
+                            },
+                            child: const Text(
+                              "Mis oportunidades",
+                              style: TextStyle(color: Colors.black),
+                            )),
+                      )
+                    ],
+                  ),
+                ),
+                const Divider(
+                  thickness: 1,
+                ),
+                SizedBox(
+                    width: 360,
                     child: Row(
                       children: [
-                        Card(
-                          child: TextButton(
-                              onPressed: () {
-                                //LLEVAR A PAGINA DE MIS CONTRATOS
-                                context.push("/contracts_screen");
-                              },
-                              child: const Text(
-                                "Mis contratos",
-                                style: TextStyle(color: Colors.black),
-                              )),
+                        const Icon(
+                          Icons.search,
+                          size: 30,
                         ),
-                        Card(
-                          child: TextButton(
-                              onPressed: () {
-                                //LLEVAR A PAGINA DE MIS CURSOS
-                                context.push("/register_screen");
-                              },
-                              child: const Text(
-                                "Mis cursos",
-                                style: TextStyle(color: Colors.black),
-                              )),
-                        ),
-                        Card(
-                          child: TextButton(
-                              onPressed: () {
-                                //LLEVAR A PAGINA DE MIS CURSOS
-                              },
-                              child: const Text(
-                                "Mis oportunidades",
-                                style: TextStyle(color: Colors.black),
-                              )),
-                        )
+                        SizedBox(
+                            width: 300,
+                            height: 40,
+                            child: TextField(
+                              focusNode: focusNode,
+                              onTapOutside: (event) => focusNode.unfocus(),
+                              decoration: const InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(2)))),
+                              controller: searchBarTextField,
+                            )),
                       ],
-                    ),
-                  ),
-                  const Divider(
-                    thickness: 1,
-                  ),
-                  SizedBox(
-                      width: 360,
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.search,
-                            size: 30,
-                          ),
-                          SizedBox(
-                              width: 300,
-                              height: 40,
-                              child: TextField(
-                                focusNode: focusNode,
-                                onTapOutside: (event) => focusNode.unfocus(),
-                                decoration: const InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(2)))),
-                                controller: searchBarTextField,
-                              )),
-                        ],
+                    )),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Podría interesarte",
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       )),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          "Podría interesarte",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: perfilesEmpresas.length,
-                        itemBuilder: (context, index) => Card(
-                          elevation: 3,
-                          color: Colors.white,
-                          child: SizedBox(
-                            width: 200,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Image.asset(
-                                    perfilesEmpresas[index].imagen,
-                                    fit: BoxFit.scaleDown,
+                ),
+                SizedBox(
+                  height: 300,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: perfilesEmpresas.length,
+                      itemBuilder: (context, index) => Card(
+                        elevation: 3,
+                        color: Colors.white,
+                        child: SizedBox(
+                          width: 200,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  perfilesEmpresas[index].imagen,
+                                  fit: BoxFit.scaleDown,
+                                ),
+                                SizedBox(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        perfilesEmpresas[index].nombre,
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        perfilesEmpresas[index].slogan,
+                                        style: const TextStyle(fontSize: 10),
+                                      )
+                                    ],
                                   ),
-                                  SizedBox(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          perfilesEmpresas[index].nombre,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          perfilesEmpresas[index].slogan,
-                                          style: const TextStyle(fontSize: 10),
-                                        )
-                                      ],
+                                ),
+                                const Expanded(child: SizedBox()),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      shadowColor: Colors.black,
+                                      elevation: 15,
+                                      backgroundColor:
+                                          const Color.fromRGBO(254, 217, 37, 1),
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
                                     ),
-                                  ),
-                                  const Expanded(child: SizedBox()),
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: TextButton(
-                                      onPressed: () {
-                                        //LLEVAR A PAGINA DE PROVEEDOR
-                                        empresaSeleccionada["imagen"] =
-                                            perfilesEmpresas[index].imagen;
-                                        empresaSeleccionada["nombre"] =
-                                            perfilesEmpresas[index].nombre;
-                                        empresaSeleccionada["productos"] =
-                                            perfilesEmpresas[index].productos;
-                                        empresaSeleccionada["regimen"] =
-                                            perfilesEmpresas[index].regimen;
-                                        empresaSeleccionada["sector"] =
-                                            perfilesEmpresas[index].sector;
-                                        empresaSeleccionada["slogan"] =
-                                            perfilesEmpresas[index].slogan;
-                                        empresaSeleccionada[
-                                                "telefonoContacto"] =
-                                            perfilesEmpresas[index]
-                                                .telefonoContacto;
-                                        context.push("/custom_provider_screen");
-                                      },
-                                      child: const Row(
-                                        children: [
-                                          Text(
-                                            "Me interesa",
-                                            style:
-                                                TextStyle(color: Colors.black),
-                                          ),
-                                          Icon(
-                                            Icons.arrow_forward,
-                                            color: Colors.black,
-                                          ),
-                                        ],
+                                    onPressed: () {
+                                      //LLEVAR A PAGINA DE PROVEEDOR
+                                      empresaSeleccionada["imagen"] =
+                                          perfilesEmpresas[index].imagen;
+                                      empresaSeleccionada["nombre"] =
+                                          perfilesEmpresas[index].nombre;
+                                      empresaSeleccionada["productos"] =
+                                          perfilesEmpresas[index].productos;
+                                      empresaSeleccionada["regimen"] =
+                                          perfilesEmpresas[index].regimen;
+                                      empresaSeleccionada["sector"] =
+                                          perfilesEmpresas[index].sector;
+                                      empresaSeleccionada["slogan"] =
+                                          perfilesEmpresas[index].slogan;
+                                      empresaSeleccionada["telefonoContacto"] =
+                                          perfilesEmpresas[index]
+                                              .telefonoContacto;
+                                      context.push("/custom_provider_screen");
+                                    },
+                                    child: const Center(
+                                      child: Text(
+                                        "Me interesa",
+                                        style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(38, 93, 166, 1),
+                                            fontWeight: FontWeight.bold),
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  const Divider(
-                    height: 50,
-                    thickness: 1,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          "Conoce a emprendedores",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: perfilesEmpresas.length,
-                        itemBuilder: (context, index) => Card(
-                          elevation: 3,
-                          color: Colors.white,
-                          child: SizedBox(
-                            width: 200,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Image.asset(
-                                    perfilesPersonales[index].imagen ??
-                                        "assets/images/loading.gif",
-                                    fit: BoxFit.scaleDown,
+                ),
+                const Divider(
+                  height: 50,
+                  thickness: 1,
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Conoce a emprendedores",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
+                ),
+                SizedBox(
+                  height: 300,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: perfilesEmpresas.length,
+                      itemBuilder: (context, index) => Card(
+                        elevation: 3,
+                        color: Colors.white,
+                        child: SizedBox(
+                          width: 200,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  perfilesPersonales[index].imagen ??
+                                      "assets/images/loading.gif",
+                                  fit: BoxFit.scaleDown,
+                                ),
+                                SizedBox(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        perfilesPersonales[index].nombre,
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        perfilesPersonales[index].presentacion,
+                                        style: const TextStyle(fontSize: 10),
+                                      )
+                                    ],
                                   ),
-                                  SizedBox(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                ),
+                                const Expanded(child: SizedBox()),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      //LLEVAR A PAGINA DE PROVEEDOR
+                                    },
+                                    child: const Row(
                                       children: [
                                         Text(
-                                          perfilesPersonales[index].nombre,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold),
+                                          "Conocer más",
+                                          style: TextStyle(color: Colors.black),
                                         ),
-                                        Text(
-                                          perfilesPersonales[index]
-                                              .presentacion,
-                                          style: const TextStyle(fontSize: 10),
-                                        )
+                                        Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.black,
+                                        ),
                                       ],
                                     ),
                                   ),
-                                  const Expanded(child: SizedBox()),
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: TextButton(
-                                      onPressed: () {
-                                        //LLEVAR A PAGINA DE PROVEEDOR
-                                      },
-                                      child: const Row(
-                                        children: [
-                                          Text(
-                                            "Conocer más",
-                                            style:
-                                                TextStyle(color: Colors.black),
-                                          ),
-                                          Icon(
-                                            Icons.arrow_forward,
-                                            color: Colors.black,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 150,
+                  color: const Color(0xFFFED925),
+                  child: Column(
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            //TODO PANTALLA DE "Aviso de privacidad"
+                          },
+                          child: const Text(
+                            "Aviso de privacidad",
+                            style: TextStyle(color: Colors.black),
+                          )),
+                      TextButton(
+                          onPressed: () {
+                            //TODO PANTALLA DE "Términos y condiciones"
+                          },
+                          child: const Text(
+                            "Terminos y condiciones",
+                            style: TextStyle(color: Colors.black),
+                          )),
+                      TextButton(
+                          onPressed: () {
+                            //TODO PANTALLA DE "Acerca de nosotros"
+                          },
+                          child: const Text(
+                            "Acerca de nosotros",
+                            style: TextStyle(color: Colors.black),
+                          ))
+                    ],
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 150,
-                    color: const Color(0xFFFED925),
-                    child: Column(
-                      children: [
-                        TextButton(
-                            onPressed: () {
-                              //TODO PANTALLA DE "Aviso de privacidad"
-                            },
-                            child: const Text(
-                              "Aviso de privacidad",
-                              style: TextStyle(color: Colors.black),
-                            )),
-                        TextButton(
-                            onPressed: () {
-                              //TODO PANTALLA DE "Términos y condiciones"
-                            },
-                            child: const Text(
-                              "Terminos y condiciones",
-                              style: TextStyle(color: Colors.black),
-                            )),
-                        TextButton(
-                            onPressed: () {
-                              //TODO PANTALLA DE "Acerca de nosotros"
-                            },
-                            child: const Text(
-                              "Acerca de nosotros",
-                              style: TextStyle(color: Colors.black),
-                            ))
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
         ),

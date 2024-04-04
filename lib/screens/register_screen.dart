@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:punto_a_punto/global/global.dart';
+import 'package:punto_a_punto/models/usuario.dart';
 import 'package:punto_a_punto/widgets/custom_appbar_1.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -11,22 +13,17 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  final _formKey = GlobalKey<FormState>();
-  // ignore: unused_field
-  String _empresa = '';
-  // ignore: unused_field
-  String _rfc = '';
-  // ignore: unused_field
-  String _regimenFiscal = '';
-  // ignore: unused_field
-  String _sectorComercial = '';
-  // ignore: unused_field
-  String _telefono = '';
-  // Variable para almacenar la imagen seleccionada
-  // Puedes usar File para manejar la imagen como un archivo local
+  final formKey = GlobalKey<FormState>();
+  String empresa = '';
+  String usuario = '';
+  String rfcUsuario = '';
+  String rfcEmpresa = '';
+  String regimenFiscal = '';
+  String sectorComercial = '';
+  String telefonoEmpresa = '';
+  String telefonoUsuario = '';
   // Aquí asumimos que estamos guardando solo la URL de la imagen
-  // ignore: unused_field
-  final String _imagenURL = '';
+  final String imagenURL = '';
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +32,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
-          key: _formKey,
+          key: formKey,
           child: ListView(
             children: <Widget>[
               TextFormField(
+                initialValue: "Juan Antonio Moreno Muñoz",
+                decoration: const InputDecoration(labelText: 'Tu nombre'),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Por favor, introduce tu nombre';
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  usuario = value!;
+                },
+              ),
+              TextFormField(
+                initialValue: "Ferretería Toño",
                 decoration:
-                    const InputDecoration(labelText: 'Nombre de la Empresa'),
+                    const InputDecoration(labelText: 'Nombre de tu Empresa'),
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Por favor, introduce el nombre de la empresa';
@@ -48,56 +59,114 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   return null;
                 },
                 onSaved: (value) {
-                  _empresa = value!;
+                  empresa = value!;
                 },
               ),
+
               TextFormField(
-                decoration: const InputDecoration(labelText: 'RFC'),
+                initialValue: "FERJ21312DDSA",
+                decoration:
+                    const InputDecoration(labelText: 'RFC de la empresa'),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Por favor, introduce el RFC';
+                    return 'Por favor, introduce el RFC de la empresa';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  _rfc = value!;
+                  rfcEmpresa = value!;
                 },
               ),
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Régimen Fiscal'),
+                initialValue: "MOMJ212121EW0",
+                decoration: const InputDecoration(labelText: 'RFC personal'),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Por favor, introduce el régimen fiscal';
+                    return 'Por favor, introduce tu RFC';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  _regimenFiscal = value!;
+                  rfcUsuario = value!;
+                },
+              ),
+              const Text(
+                'Selecciona el Régimen Fiscal:',
+                style: TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 10),
+              DropdownButtonFormField<String>(
+                value: regimenFiscal,
+                onChanged: (newValue) {
+                  setState(() {
+                    regimenFiscal = newValue ?? "";
+                  });
+                },
+                items: <String>[
+                  'Régimen General',
+                  'Régimen Simplificado de Confianza ',
+                  'Régimen de Actividades Empresariales con ingresos a través de Plataformas Tecnológicas.',
+                  'Régimen de Arrendamiento',
+                  ' Régimen de Actividades Empresariales y Profesionales'
+                  // Agrega más opciones según sea necesario
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Régimen Fiscal',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Por favor, selecciona un régimen fiscal';
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  // Guarda el valor seleccionado en la variable _regimenFiscal
+                  regimenFiscal = value!;
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                    labelText: 'Sector Comercial de la empresa'),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Por favor, introduce el sector comercial de la empresa';
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  sectorComercial = value!;
                 },
               ),
               TextFormField(
                 decoration:
-                    const InputDecoration(labelText: 'Sector Comercial'),
+                    const InputDecoration(labelText: 'Teléfono de la Empresa'),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Por favor, introduce el sector comercial';
+                    return 'Por favor, introduce el teléfono de la Empresa';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  _sectorComercial = value!;
+                  telefonoEmpresa = value!;
                 },
               ),
               TextFormField(
-                decoration: const InputDecoration(labelText: 'Teléfono'),
+                decoration:
+                    const InputDecoration(labelText: 'Telefono personal'),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Por favor, introduce el teléfono';
+                    return 'Por favor, introduce tu telefono';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  _telefono = value!;
+                  telefonoUsuario = value!;
                 },
               ),
               const SizedBox(
@@ -115,6 +184,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                 ),
                 onPressed: () async {
+                  //INICIALIZAR INFORMACIÓN DE USUARIO
+                  usuarioGlobal = Usuario(
+                      nombreEmpresa: empresa,
+                      nombreUsuario: usuario,
+                      rfcEmpresa: rfcEmpresa,
+                      rfcUusario: rfcUsuario,
+                      telefonoEmpresa: telefonoEmpresa,
+                      telefonoUsuario: telefonoUsuario);
                   //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
                   context.push("/home_screen");
                 },

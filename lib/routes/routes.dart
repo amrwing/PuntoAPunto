@@ -23,7 +23,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
         path: '/contracts_screen',
         builder: (BuildContext context, GoRouterState state) {
-          return ContractsScreen();
+          return const ContractsScreen();
         }),
     GoRoute(
         path: '/custom_provider_screen',
@@ -39,6 +39,11 @@ final GoRouter appRouter = GoRouter(
         path: '/stablish_contract_screen',
         builder: (BuildContext context, GoRouterState state) {
           return const StablishContractScreen();
+        }),
+    GoRoute(
+        path: '/product_screen',
+        builder: (BuildContext context, GoRouterState state) {
+          return const ProductScreen();
         }),
   ],
 );

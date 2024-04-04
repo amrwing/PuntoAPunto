@@ -1,51 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:punto_a_punto/models/contrato.dart';
+import 'package:punto_a_punto/global/global.dart';
 import 'package:punto_a_punto/widgets/widgets.dart';
 
 class ContractsScreen extends StatelessWidget {
-  ContractsScreen({super.key});
-  final List<Contrato> contratos = [
-    Contrato(
-      nombreProveedor: "Empresa Constructora S.A. de C.V.",
-      nombreComprador: "Inmobiliaria Progreso",
-      objetoDeContrato: "Construcción de Edificio Residencial",
-      derechosYObligaciones:
-          "Las partes acuerdan los derechos y obligaciones para la construcción del edificio.",
-      garantias:
-          "La empresa constructora garantiza la calidad y seguridad de la construcción.",
-      tipoDeContrato: "Contrato de Construcción",
-      frecuenciaDeProvision: "Una vez al mes",
-      fechaInicio: DateTime(2024, 1, 1),
-      fechaTerminacion: DateTime(2025, 1, 1),
-    ),
-    Contrato(
-      nombreProveedor: "Distribuidora de Tecnología S.A. de C.V.",
-      nombreComprador: "Empresa Tecnológica Innovadora",
-      objetoDeContrato: "Suministro de Equipos Informáticos",
-      derechosYObligaciones:
-          "Las partes acuerdan los derechos y obligaciones para el suministro de equipos informáticos.",
-      garantias:
-          "La distribuidora garantiza el funcionamiento correcto de los equipos suministrados.",
-      tipoDeContrato: "Contrato de Suministro",
-      frecuenciaDeProvision: "A demanda",
-      fechaInicio: DateTime(2024, 2, 15),
-      fechaTerminacion: DateTime(2024, 12, 31),
-    ),
-    Contrato(
-      nombreProveedor: "Consultores Financieros Profesionales S.C.",
-      nombreComprador: "Startups Innovadoras",
-      objetoDeContrato: "Consultoría Financiera y de Negocios",
-      derechosYObligaciones:
-          "Las partes acuerdan los derechos y obligaciones para la consultoría financiera y de negocios.",
-      garantias:
-          "Los consultores garantizan la confidencialidad y veracidad de la información proporcionada.",
-      tipoDeContrato: "Contrato de Consultoría",
-      frecuenciaDeProvision: "A convenir",
-      fechaInicio: DateTime(2024, 3, 10),
-      fechaTerminacion: DateTime(2025, 3, 10),
-    ),
-    // Puedes agregar más contratos aquí según sea necesario
-  ];
+  const ContractsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +25,7 @@ class ContractsScreen extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: contratos.length,
+                itemCount: contratosGlobal.length,
                 itemBuilder: (context, index) => Card(
                   margin: const EdgeInsets.all(8),
                   child: Column(
@@ -77,7 +35,7 @@ class ContractsScreen extends StatelessWidget {
                         child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              contratos[index].nombreProveedor,
+                              contratosGlobal[index].nombreProveedor,
                               style: const TextStyle(
                                   fontSize: 12, fontWeight: FontWeight.bold),
                             )),
@@ -86,18 +44,18 @@ class ContractsScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 8, right: 8),
                         child: Align(
                             alignment: Alignment.centerLeft,
-                            child: Text(contratos[index].tipoDeContrato)),
+                            child: Text(contratosGlobal[index].tipoDeContrato)),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
                         child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              "Fecha de terminación ${contratos[index].fechaTerminacion.toIso8601String().split('T')[0]}",
+                              "Fecha de terminación ${contratosGlobal[index].fechaTerminacion.toIso8601String().split('T')[0]}",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: ((DateTime.now()
-                                              .difference(contratos[index]
+                                              .difference(contratosGlobal[index]
                                                   .fechaTerminacion)
                                               .inDays <
                                           20))

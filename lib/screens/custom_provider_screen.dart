@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:go_router/go_router.dart';
 import 'package:punto_a_punto/global/global.dart';
 import 'package:punto_a_punto/widgets/widgets.dart';
@@ -65,30 +64,30 @@ class CustomProviderScreen extends StatelessWidget {
                         ? MediaQuery.of(context).size.width * 0.8
                         : MediaQuery.of(context).size.width * 0.3,
                     child: Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(
                             'Regimen: ${empresaSeleccionada['regimen']}',
-                            style: TextStyle(fontSize: 16),
+                            style: const TextStyle(fontSize: 16),
                           ),
                           const Divider(
                             thickness: 2,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Text(
                             'Sector: ${empresaSeleccionada['sector']}',
-                            style: TextStyle(fontSize: 16),
+                            style: const TextStyle(fontSize: 16),
                           ),
                           const Divider(
                             thickness: 2,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Text(
                             'Teléfono de contacto: ${empresaSeleccionada['telefonoContacto']}',
-                            style: TextStyle(fontSize: 16),
+                            style: const TextStyle(fontSize: 16),
                           ),
                           const Divider(
                             thickness: 2,
@@ -101,46 +100,103 @@ class CustomProviderScreen extends StatelessWidget {
                     'Materias',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
-                    height: 500,
+                  Container(
+                    height: 400,
                     width: (MediaQuery.of(context).size.width < 720)
                         ? MediaQuery.of(context).size.width * 0.8
                         : MediaQuery.of(context).size.width * 0.3,
-                    child: ListView.builder(
-                      itemCount: empresaSeleccionada['productos'].length,
-                      itemBuilder: (context, index) => Card(
-                        child: Column(
-                          children: [
-                            ListTile(
-                              trailing: TextButton(
-                                child: const Text("Solicitar producto"),
-                                onPressed: () {
-                                  //ENTRAR A LA SOLICITUD DEL MATERIAL
-                                  productoSeleccionado['nombre'] =
-                                      empresaSeleccionada['productos'][index]
-                                          .nombre;
-                                  productoSeleccionado['descripcion'] =
-                                      empresaSeleccionada['productos'][index]
-                                          .descripcion;
-                                  productoSeleccionado['precioMayoreo'] =
-                                      empresaSeleccionada['productos'][index]
-                                          .precioMayoreo;
-                                  productoSeleccionado['precioUnidad'] =
-                                      empresaSeleccionada['productos'][index]
-                                          .precioUnidad;
-                                  productoSeleccionado['plazosDeEntrega'] =
-                                      empresaSeleccionada['productos'][index]
-                                          .plazosDeEntrega;
-                                  productoSeleccionado['metodoEntrega'] =
-                                      empresaSeleccionada['productos'][index]
-                                          .metodoEntrega;
-                                  context.push("/stablish_contract_screen");
-                                },
-                              ),
-                              leading: Text(
-                                  '${empresaSeleccionada['productos'][index].nombre}'),
+                    decoration:
+                        BoxDecoration(border: Border.all(color: Colors.black)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListView.builder(
+                        itemCount: empresaSeleccionada['productos'].length,
+                        itemBuilder: (context, index) => Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Card(
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: Text(
+                                    '${empresaSeleccionada['productos'][index].nombre}',
+                                    style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                        "Precio al mayoreo: \$${empresaSeleccionada['productos'][index].precioMayoreo} pesos/unidad"),
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 8.0),
+                                  child: Divider(
+                                    thickness: 2,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 8.0, bottom: 8),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                        "Precio unitario: \$${empresaSeleccionada['productos'][index].precioUnidad} pesos/unidad"),
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 8.0),
+                                  child: Divider(
+                                    thickness: 2,
+                                  ),
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    shadowColor: Colors.black,
+                                    elevation: 15,
+                                    backgroundColor:
+                                        const Color.fromRGBO(254, 217, 37, 1),
+                                    shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20))),
+                                  ),
+                                  onPressed: () {
+                                    //ENTRAR A LA SOLICITUD DEL MATERIAL
+                                    productoSeleccionado['nombre'] =
+                                        empresaSeleccionada['productos'][index]
+                                            .nombre;
+                                    productoSeleccionado['descripcion'] =
+                                        empresaSeleccionada['productos'][index]
+                                            .descripcion;
+                                    productoSeleccionado['precioMayoreo'] =
+                                        empresaSeleccionada['productos'][index]
+                                            .precioMayoreo;
+                                    productoSeleccionado['precioUnidad'] =
+                                        empresaSeleccionada['productos'][index]
+                                            .precioUnidad;
+                                    productoSeleccionado['plazosDeEntrega'] =
+                                        empresaSeleccionada['productos'][index]
+                                            .plazosDeEntrega;
+                                    productoSeleccionado['metodoEntrega'] =
+                                        empresaSeleccionada['productos'][index]
+                                            .metodoEntrega;
+                                    context.push("/product_screen");
+                                  },
+                                  child: const Center(
+                                    child: Text(
+                                      "Ver",
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(38, 93, 166, 1),
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
