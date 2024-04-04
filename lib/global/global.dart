@@ -1,5 +1,6 @@
 import 'package:punto_a_punto/models/contrato.dart';
 import 'package:punto_a_punto/models/lecciones.dart';
+import 'package:punto_a_punto/models/solicitud_asesoria.dart';
 import 'package:punto_a_punto/models/usuario.dart';
 
 const Map<String, dynamic> informacionOnboarding = {
@@ -7,6 +8,8 @@ const Map<String, dynamic> informacionOnboarding = {
 };
 Map<String, dynamic> empresaSeleccionada = {};
 Map<String, dynamic> productoSeleccionado = {};
+Map<String, dynamic> personaSeleccionada = {};
+List<SolicitudAsesoria> solicitudesAsesoria = [];
 late Usuario usuarioGlobal;
 List<Leccion> leccionesGlobales = [
   Leccion(

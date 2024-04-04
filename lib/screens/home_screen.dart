@@ -216,7 +216,7 @@ List<PerfilEmpresa> perfilesEmpresas = [
 List<PerfilPersonal> perfilesPersonales = [
   PerfilPersonal(
       nombre: "Ana García",
-      edad: 28,
+      edad: "28",
       telefono: "555-1234",
       estado: "Ciudad de México",
       ciudad: "CDMX",
@@ -225,7 +225,7 @@ List<PerfilPersonal> perfilesPersonales = [
       imagen: "assets/images/anagarcia.jpg"),
   PerfilPersonal(
       nombre: "Carlos Martínez",
-      edad: 35,
+      edad: "35",
       telefono: "555-5678",
       estado: "Nuevo León",
       ciudad: "Monterrey",
@@ -234,7 +234,7 @@ List<PerfilPersonal> perfilesPersonales = [
       imagen: "assets/images/carlosmartinez.jpg"),
   PerfilPersonal(
       nombre: "Laura Rodríguez",
-      edad: 42,
+      edad: "42",
       telefono: "555-9012",
       estado: "Jalisco",
       ciudad: "Guadalajara",
@@ -243,7 +243,7 @@ List<PerfilPersonal> perfilesPersonales = [
       imagen: "assets/images/laurarodriguez.jpg"),
   PerfilPersonal(
       nombre: "Eduardo López",
-      edad: 30,
+      edad: "30",
       telefono: "555-3456",
       estado: "Puebla",
       ciudad: "Puebla",
@@ -252,7 +252,7 @@ List<PerfilPersonal> perfilesPersonales = [
       imagen: "assets/images/eduardolopez.jpg"),
   PerfilPersonal(
       nombre: "María Sánchez",
-      edad: 29,
+      edad: "29",
       telefono: "555-7890",
       estado: "Veracruz",
       ciudad: "Veracruz",
@@ -328,23 +328,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       Card(
                         child: TextButton(
                             onPressed: () {
-                              //LLEVAR A PAGINA DE MIS CURSOS
+                              context.push("/asesorias_screen");
                             },
                             child: const Text(
-                              "Mis cursos",
+                              "Mis asesorías",
                               style: TextStyle(color: Colors.black),
                             )),
                       ),
-                      Card(
-                        child: TextButton(
-                            onPressed: () {
-                              //LLEVAR A PAGINA DE MIS CURSOS
-                            },
-                            child: const Text(
-                              "Mis oportunidades",
-                              style: TextStyle(color: Colors.black),
-                            )),
-                      )
                     ],
                   ),
                 ),
@@ -531,6 +521,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: TextButton(
                                     onPressed: () {
                                       //LLEVAR A PAGINA DE PROVEEDOR
+                                      personaSeleccionada['nombre'] =
+                                          perfilesPersonales[index].nombre;
+                                      personaSeleccionada['ciudad'] =
+                                          perfilesPersonales[index].ciudad;
+                                      personaSeleccionada['edad'] =
+                                          perfilesPersonales[index].edad;
+                                      personaSeleccionada['presentacion'] =
+                                          perfilesPersonales[index]
+                                              .presentacion;
+                                      personaSeleccionada['imagen'] =
+                                          perfilesPersonales[index].imagen;
+                                      personaSeleccionada['estado'] =
+                                          perfilesPersonales[index].estado;
+                                      context.push("/custom_person_screen");
                                     },
                                     child: const Row(
                                       children: [
