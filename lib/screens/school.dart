@@ -106,94 +106,105 @@ class _EscuelaState extends State<Escuela> {
               )
             ],
           ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  height: altura,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.01,
-                    ),
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: lecciones.length,
-                      itemBuilder: (context, index) => Card(
-                        surfaceTintColor: Colors.blue,
-                        elevation: 3,
-                        color: Colors.white,
-                        child: SizedBox(
-                          width: (MediaQuery.of(context).size.width < 1000)
-                              ? MediaQuery.of(context).size.width * 0.8
-                              : MediaQuery.of(context).size.width * 0.3,
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 10,
-                              right: 10,
-                              top: 30,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      SizedBox(
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image.asset(
-                                            lecciones[index].ima,
-                                            width: 300,
-                                            height: 200,
-                                            fit: BoxFit.fill,
+          body: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    "Aprendamos juntos",
+                    style: TextStyle(fontFamily: 'Milker'),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: altura,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.01,
+                      ),
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: lecciones.length,
+                        itemBuilder: (context, index) => Card(
+                          surfaceTintColor: Colors.blue,
+                          elevation: 3,
+                          color: Colors.white,
+                          child: SizedBox(
+                            width: (MediaQuery.of(context).size.width < 1000)
+                                ? MediaQuery.of(context).size.width * 0.8
+                                : MediaQuery.of(context).size.width * 0.3,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                                top: 30,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Image.asset(
+                                              lecciones[index].ima,
+                                              width: 300,
+                                              height: 200,
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Text(
-                                        lecciones[index].nombre,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Text(
-                                        lecciones[index].resumen,
-                                        style: const TextStyle(fontSize: 15),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Align(
-                                  alignment: Alignment.bottomRight,
-                                  child: Row(
-                                    children: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            context.push(lecciones[index].path),
-                                        child: const Text(
-                                          "Me interesa",
-                                          style: TextStyle(color: Colors.black),
+                                        const SizedBox(
+                                          height: 10,
                                         ),
-                                      ),
-                                      const Icon(
-                                        Icons.arrow_forward,
-                                        color: Colors.black,
-                                      ),
-                                    ],
+                                        Text(
+                                          lecciones[index].nombre,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          lecciones[index].resumen,
+                                          style: const TextStyle(fontSize: 15),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  const Expanded(child: SizedBox()),
+                                  Align(
+                                    alignment: Alignment.bottomRight,
+                                    child: Row(
+                                      children: [
+                                        TextButton(
+                                          onPressed: () => context
+                                              .push(lecciones[index].path),
+                                          child: const Text(
+                                            "Me interesa",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                        ),
+                                        const Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.black,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -201,38 +212,38 @@ class _EscuelaState extends State<Escuela> {
                     ),
                   ),
                 ),
-              ),
-              const Text(
-                "Ya cuentas con tu información fiscal?",
-                style: TextStyle(fontFamily: 'Milker'),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.black,
-                    elevation: 15,
-                    backgroundColor: const Color.fromRGBO(254, 217, 37, 1),
-                    maximumSize: const Size(210, 50),
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                  ),
-                  onPressed: () async {
-                    //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
-                    context.push("/register_screen");
-                  },
-                  child: const Center(
-                    child: Text(
-                      "QUIERO REGISTRARME",
-                      style: TextStyle(
-                          color: Color.fromRGBO(38, 93, 166, 1),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15),
+                const Text(
+                  "Ya cuentas con tu información fiscal?",
+                  style: TextStyle(fontFamily: 'Milker'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shadowColor: Colors.black,
+                      elevation: 15,
+                      backgroundColor: const Color.fromRGBO(254, 217, 37, 1),
+                      maximumSize: const Size(210, 50),
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                    ),
+                    onPressed: () async {
+                      //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
+                      context.push("/register_screen");
+                    },
+                    child: const Center(
+                      child: Text(
+                        "QUIERO REGISTRARME",
+                        style: TextStyle(
+                            color: Color.fromRGBO(38, 93, 166, 1),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

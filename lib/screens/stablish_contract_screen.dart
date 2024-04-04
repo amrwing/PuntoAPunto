@@ -99,7 +99,7 @@ class _StablishContractScreenState extends State<StablishContractScreen> {
                   TextFormField(
                     initialValue: (usuarioGlobal.nombreUsuario.isEmpty)
                         ? ""
-                        : usuarioGlobal.nombreUsuario,
+                        : usuarioGlobal.nombreEmpresa,
                     decoration: const InputDecoration(
                         labelText: 'Nombre del Comprador'),
                     validator: (value) {
