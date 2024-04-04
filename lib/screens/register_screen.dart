@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:go_router/go_router.dart';
 import 'package:punto_a_punto/global/global.dart';
 import 'package:punto_a_punto/models/usuario.dart';
@@ -16,6 +16,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
   String empresa = '';
+  String edad = '';
   String usuario = '';
   String rfcUsuario = '';
   String rfcEmpresa = '';
@@ -153,6 +154,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                   ),
                   TextFormField(
+                    initialValue: "21",
+                    decoration: const InputDecoration(labelText: 'Edad'),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Por favor, introduce tu edad';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      edad = value!;
+                    },
+                  ),
+                  TextFormField(
                     initialValue: "555-555-5555",
                     decoration: const InputDecoration(
                         labelText: 'Teléfono de la Empresa'),
@@ -200,6 +214,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         formKey.currentState!.save();
 
                         usuarioGlobal = Usuario(
+                            edad: edad,
                             nombreEmpresa: empresa,
                             nombreUsuario: usuario,
                             rfcEmpresa: rfcEmpresa,
@@ -219,6 +234,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 24,
+                  )
                 ],
               ),
             ),

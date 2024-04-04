@@ -1,3 +1,7 @@
+export 'package:punto_a_punto/screens/asesorias_screen.dart';
+
+export 'package:punto_a_punto/screens/custom_person_screen.dart';
+
 export 'package:punto_a_punto/screens/product_screen.dart';
 export 'package:punto_a_punto/screens/stablish_contract_screen.dart';
 export 'package:punto_a_punto/screens/register_screen.dart';

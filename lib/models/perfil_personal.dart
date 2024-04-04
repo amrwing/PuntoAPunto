@@ -1,6 +1,6 @@
 class PerfilPersonal {
   String nombre;
-  int edad;
+  String edad;
   String telefono;
   String estado;
   String ciudad;

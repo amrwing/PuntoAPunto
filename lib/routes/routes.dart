@@ -106,5 +106,17 @@ final GoRouter appRouter = GoRouter(
         return const Leccion9();
       },
     ),
+    GoRoute(
+      path: '/custom_person_screen',
+      builder: (BuildContext context, GoRouterState state) {
+        return const CustomPersonScreen();
+      },
+    ),
+    GoRoute(
+      path: '/asesorias_screen',
+      builder: (BuildContext context, GoRouterState state) {
+        return const AsesoriasScreen();
+      },
+    ),
   ],
 );
