@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:punto_a_punto/widgets/widgets.dart';
 
 class Leccion7 extends StatelessWidget {
   const Leccion7({super.key});

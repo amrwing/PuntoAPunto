@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:punto_a_punto/global/global.dart';
 import 'package:punto_a_punto/models/usuario.dart';
@@ -18,7 +19,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String usuario = '';
   String rfcUsuario = '';
   String rfcEmpresa = '';
-  String regimenFiscal = '';
+  String regimenFiscal = 'Régimen de Actividades Empresariales y Profesionales';
   String sectorComercial = '';
   String telefonoEmpresa = '';
   String telefonoUsuario = '';
@@ -95,42 +96,47 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 10),
-              DropdownButtonFormField<String>(
-                value: regimenFiscal,
-                onChanged: (newValue) {
-                  setState(() {
-                    regimenFiscal = newValue ?? "";
-                  });
-                },
-                items: <String>[
-                  'Régimen General',
-                  'Régimen Simplificado de Confianza ',
-                  'Régimen de Actividades Empresariales con ingresos a través de Plataformas Tecnológicas.',
-                  'Régimen de Arrendamiento',
-                  ' Régimen de Actividades Empresariales y Profesionales'
-                  // Agrega más opciones según sea necesario
-                ].map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Régimen Fiscal',
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: DropdownButtonFormField<String>(
+                  value: regimenFiscal,
+                  onChanged: (newValue) {
+                    setState(() {
+                      regimenFiscal = newValue ?? "";
+                    });
+                  },
+                  items: <String>[
+                    '',
+                    'Régimen General',
+                    'Régimen Simplificado de Confianza ',
+                    'Régimen de Actividades Empresariales con ingresos a través de Plataformas Tecnológicas.',
+                    'Régimen de Arrendamiento',
+                    'Régimen de Actividades Empresariales y Profesionales'
+                    // Agrega más opciones según sea necesario
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Régimen Fiscal',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Por favor, selecciona un régimen fiscal';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    // Guarda el valor seleccionado en la variable _regimenFiscal
+                    regimenFiscal = value!;
+                  },
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, selecciona un régimen fiscal';
-                  }
-                  return null;
-                },
-                onSaved: (value) {
-                  // Guarda el valor seleccionado en la variable _regimenFiscal
-                  regimenFiscal = value!;
-                },
               ),
               TextFormField(
+                initialValue: "Ferretero",
                 decoration: const InputDecoration(
                     labelText: 'Sector Comercial de la empresa'),
                 validator: (value) {
@@ -144,6 +150,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
               ),
               TextFormField(
+                initialValue: "555-555-5555",
                 decoration:
                     const InputDecoration(labelText: 'Teléfono de la Empresa'),
                 validator: (value) {
@@ -157,6 +164,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
               ),
               TextFormField(
+                initialValue: "222-222-2222",
                 decoration:
                     const InputDecoration(labelText: 'Telefono personal'),
                 validator: (value) {

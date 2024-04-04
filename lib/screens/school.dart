@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import '../models/models.dart';
 
@@ -73,7 +74,6 @@ class _EscuelaState extends State<Escuela> {
   @override
   Widget build(BuildContext context) {
     final altura = MediaQuery.of(context).size.height * 0.7;
-    final ancho = MediaQuery.of(context).size.width * 0.8;
     return Material(
       child: SafeArea(
         child: Scaffold(
@@ -213,7 +213,7 @@ class _EscuelaState extends State<Escuela> {
                   ),
                   onPressed: () async {
                     //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
-                    context.push("/onboarding_slideshow");
+                    context.push("/register_screen");
                   },
                   child: const Center(
                     child: Text(
