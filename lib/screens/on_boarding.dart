@@ -143,234 +143,242 @@ class _OnBoardingSlideshowState extends State<OnBoardingSlideshow> {
         child: Scaffold(
       appBar: const CustomAppBar1(),
       body: SafeArea(
-        child: SizedBox(
-          child: Column(
-            children: [
-              Flexible(
-                flex: 1,
-                child: PageView(
-                  controller: _pageController,
-                  onPageChanged: (int page) {
-                    setState(() {
-                      selectedPage = page;
-                    });
-                  },
-                  children: [
-                    Center(
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: MediaQuery.of(context).size.height / 1.5,
-                        width: MediaQuery.of(context).size.width / 1.2,
-                        decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [
-                                Color.fromRGBO(248, 216, 53, 1),
-                                Color.fromRGBO(248, 216, 53, 0.90),
-                                Color.fromRGBO(252, 229, 116, 0.80),
-                                Color.fromRGBO(252, 229, 116, 0.70),
-                              ],
-                              stops: [0.25, 0.5, 0.75, 1],
-                              begin: FractionalOffset.topCenter,
-                              end: FractionalOffset.bottomCenter,
-                            ),
-                            border: Border.all(
-                                color: const Color.fromRGBO(38, 93, 166, 0.3)),
-                            borderRadius: BorderRadius.circular(5),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Color.fromRGBO(38, 93, 166, 0.3),
-                                spreadRadius: 3,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              )
-                            ]),
-                        child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.bar_chart_sharp,
-                                color: Colors.white,
-                                size: 130,
+        child: Center(
+          child: SizedBox(
+            width: (MediaQuery.of(context).size.width < 720)
+                ? MediaQuery.of(context).size.width * 0.8
+                : MediaQuery.of(context).size.width * 0.3,
+            child: Column(
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: PageView(
+                    controller: _pageController,
+                    onPageChanged: (int page) {
+                      setState(() {
+                        selectedPage = page;
+                      });
+                    },
+                    children: [
+                      Center(
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: MediaQuery.of(context).size.height / 1.5,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(248, 216, 53, 1),
+                                  Color.fromRGBO(248, 216, 53, 0.90),
+                                  Color.fromRGBO(252, 229, 116, 0.80),
+                                  Color.fromRGBO(252, 229, 116, 0.70),
+                                ],
+                                stops: [0.25, 0.5, 0.75, 1],
+                                begin: FractionalOffset.topCenter,
+                                end: FractionalOffset.bottomCenter,
                               ),
-                              Padding(
-                                padding: EdgeInsets.all(15),
-                                child: Text(
-                                  '¡¿Sabías que el 60% de las microempresas en México son empresas informales?!\n\nSiendo el miedo al proceso de organización la principal razón de esta estadística',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Color.fromRGBO(38, 93, 166, 1),
-                                      fontSize: 20,
-                                      height: 1.2,
-                                      fontWeight: FontWeight.w800),
+                              border: Border.all(
+                                  color:
+                                      const Color.fromRGBO(38, 93, 166, 0.3)),
+                              borderRadius: BorderRadius.circular(5),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromRGBO(38, 93, 166, 0.3),
+                                  spreadRadius: 3,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                )
+                              ]),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.bar_chart_sharp,
+                                  color: Colors.white,
+                                  size: 130,
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: MediaQuery.of(context).size.height / 1.5,
-                        width: MediaQuery.of(context).size.width / 1.2,
-                        decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [
-                                Color.fromRGBO(248, 216, 53, 1),
-                                Color.fromRGBO(248, 216, 53, 0.90),
-                                Color.fromRGBO(252, 229, 116, 0.80),
-                                Color.fromRGBO(252, 229, 116, 0.70),
-                              ],
-                              stops: [0.25, 0.5, 0.75, 1],
-                              begin: FractionalOffset.topCenter,
-                              end: FractionalOffset.bottomCenter,
-                            ),
-                            border: Border.all(
-                                color: const Color.fromRGBO(38, 93, 166, 0.3)),
-                            borderRadius: BorderRadius.circular(5),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Color.fromRGBO(38, 93, 166, 0.3),
-                                spreadRadius: 3,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              )
-                            ]),
-                        child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.groups_2_rounded,
-                                color: Colors.white,
-                                size: 130,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(15),
-                                child: Text(
-                                  'El objetivo del eje de desarrollo económico y social de Fundación Coppel está enfocado en brindar oportunidades que generen prosperidad y empoderamiento a nuestras comunidades',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Color.fromRGBO(38, 93, 166, 1),
-                                      fontSize: 20,
-                                      height: 1.2,
-                                      fontWeight: FontWeight.w800),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: MediaQuery.of(context).size.height / 1.5,
-                        width: MediaQuery.of(context).size.width / 1.2,
-                        decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [
-                                Color.fromRGBO(248, 216, 53, 1),
-                                Color.fromRGBO(248, 216, 53, 0.90),
-                                Color.fromRGBO(252, 229, 116, 0.80),
-                                Color.fromRGBO(252, 229, 116, 0.70),
-                              ],
-                              stops: [0.25, 0.5, 0.75, 1],
-                              begin: FractionalOffset.topCenter,
-                              end: FractionalOffset.bottomCenter,
-                            ),
-                            border: Border.all(
-                                color: const Color.fromRGBO(38, 93, 166, 0.3)),
-                            borderRadius: BorderRadius.circular(5),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Color.fromRGBO(38, 93, 166, 0.3),
-                                spreadRadius: 3,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              )
-                            ]),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.handshake_rounded,
-                                color: Colors.white,
-                                size: 130,
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.all(15),
-                                child: Text(
-                                  '¡Con PuntoAPunto, verás que llevar una administración y organización formal de tu empresa te llevará al éxito!',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Color.fromRGBO(38, 93, 166, 1),
-                                      fontSize: 20,
-                                      height: 1.2,
-                                      fontWeight: FontWeight.w800),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 50),
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    shadowColor: Colors.black,
-                                    elevation: 15,
-                                    backgroundColor:
-                                        const Color.fromRGBO(38, 93, 166, 1),
-                                    maximumSize: const Size(150, 50),
-                                    shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
+                                Padding(
+                                  padding: EdgeInsets.all(15),
+                                  child: Text(
+                                    '¡¿Sabías que el 60% de las microempresas en México son empresas informales?!\n\nSiendo el miedo al proceso de organización la principal razón de esta estadística',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color.fromRGBO(38, 93, 166, 1),
+                                        fontSize: 20,
+                                        height: 1.2,
+                                        fontWeight: FontWeight.w800),
                                   ),
-                                  onPressed: () async {
-                                    //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
-                                    context.push("/school");
-                                  },
-                                  child: const Center(
-                                    child: Text(
-                                      "ESTOY DENTRO",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                      textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: MediaQuery.of(context).size.height / 1.5,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(248, 216, 53, 1),
+                                  Color.fromRGBO(248, 216, 53, 0.90),
+                                  Color.fromRGBO(252, 229, 116, 0.80),
+                                  Color.fromRGBO(252, 229, 116, 0.70),
+                                ],
+                                stops: [0.25, 0.5, 0.75, 1],
+                                begin: FractionalOffset.topCenter,
+                                end: FractionalOffset.bottomCenter,
+                              ),
+                              border: Border.all(
+                                  color:
+                                      const Color.fromRGBO(38, 93, 166, 0.3)),
+                              borderRadius: BorderRadius.circular(5),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromRGBO(38, 93, 166, 0.3),
+                                  spreadRadius: 3,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                )
+                              ]),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.groups_2_rounded,
+                                  color: Colors.white,
+                                  size: 130,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(15),
+                                  child: Text(
+                                    'El objetivo del eje de desarrollo económico y social de Fundación Coppel está enfocado en brindar oportunidades que generen prosperidad y empoderamiento a nuestras comunidades',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color.fromRGBO(38, 93, 166, 1),
+                                        fontSize: 20,
+                                        height: 1.2,
+                                        fontWeight: FontWeight.w800),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: MediaQuery.of(context).size.height / 1.5,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(248, 216, 53, 1),
+                                  Color.fromRGBO(248, 216, 53, 0.90),
+                                  Color.fromRGBO(252, 229, 116, 0.80),
+                                  Color.fromRGBO(252, 229, 116, 0.70),
+                                ],
+                                stops: [0.25, 0.5, 0.75, 1],
+                                begin: FractionalOffset.topCenter,
+                                end: FractionalOffset.bottomCenter,
+                              ),
+                              border: Border.all(
+                                  color:
+                                      const Color.fromRGBO(38, 93, 166, 0.3)),
+                              borderRadius: BorderRadius.circular(5),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromRGBO(38, 93, 166, 0.3),
+                                  spreadRadius: 3,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                )
+                              ]),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.handshake_rounded,
+                                  color: Colors.white,
+                                  size: 130,
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.all(15),
+                                  child: Text(
+                                    '¡Con PuntoAPunto, verás que llevar una administración y organización formal de tu empresa te llevará al éxito!',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color.fromRGBO(38, 93, 166, 1),
+                                        fontSize: 20,
+                                        height: 1.2,
+                                        fontWeight: FontWeight.w800),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 50),
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      shadowColor: Colors.black,
+                                      elevation: 15,
+                                      backgroundColor:
+                                          const Color.fromRGBO(38, 93, 166, 1),
+                                      maximumSize: const Size(150, 50),
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
+                                    ),
+                                    onPressed: () async {
+                                      //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
+                                      context.push("/school");
+                                    },
+                                    child: const Center(
+                                      child: Text(
+                                        "ESTOY DENTRO",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                        textAlign: TextAlign.center,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              PageViewDotIndicator(
-                currentItem: selectedPage,
-                count: 3,
-                unselectedColor: Colors.black26,
-                selectedColor: Colors.blue,
-                duration: const Duration(milliseconds: 200),
-                boxShape: BoxShape.rectangle,
-                onItemClicked: (index) {
-                  _pageController.animateToPage(
-                    index,
-                    duration: const Duration(milliseconds: 200),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
-              const SizedBox(
-                height: 80,
-              )
-            ],
+                PageViewDotIndicator(
+                  currentItem: selectedPage,
+                  count: 3,
+                  unselectedColor: Colors.black26,
+                  selectedColor: Colors.blue,
+                  duration: const Duration(milliseconds: 200),
+                  boxShape: BoxShape.rectangle,
+                  onItemClicked: (index) {
+                    _pageController.animateToPage(
+                      index,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 80,
+                )
+              ],
+            ),
           ),
         ),
       ),
