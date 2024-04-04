@@ -109,14 +109,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     '',
                     'Régimen General',
                     'Régimen Simplificado de Confianza ',
-                    'Régimen de Actividades Empresariales con ingresos a través de Plataformas Tecnológicas.',
+                    'Régimen de Actividades Empresariales...',
                     'Régimen de Arrendamiento',
                     'Régimen de Actividades Empresariales y Profesionales'
                     // Agrega más opciones según sea necesario
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Text(
+                        value.length > 30
+                            ? '${value.substring(0, 30)}...'
+                            : value, // Limita la longitud del texto
+                      ),
                     );
                   }).toList(),
                   decoration: const InputDecoration(
@@ -180,6 +184,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(
                 height: 20,
               ),
+
               // Aquí puedes mostrar la imagen seleccionada si es necesario
               // Por ejemplo: Image.network(_imagenURL),
               ElevatedButton(
@@ -191,17 +196,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                 ),
-                onPressed: () async {
-                  //INICIALIZAR INFORMACIÓN DE USUARIO
-                  usuarioGlobal = Usuario(
-                      nombreEmpresa: empresa,
-                      nombreUsuario: usuario,
-                      rfcEmpresa: rfcEmpresa,
-                      rfcUusario: rfcUsuario,
-                      telefonoEmpresa: telefonoEmpresa,
-                      telefonoUsuario: telefonoUsuario);
-                  //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
-                  context.push("/home_screen");
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+
+                    usuarioGlobal = Usuario(
+                        nombreEmpresa: empresa,
+                        nombreUsuario: usuario,
+                        rfcEmpresa: rfcEmpresa,
+                        rfcUusario: rfcUsuario,
+                        telefonoEmpresa: telefonoEmpresa,
+                        telefonoUsuario: telefonoUsuario);
+                    //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
+                    context.push("/home_screen");
+                  }
                 },
                 child: const Center(
                   child: Text(

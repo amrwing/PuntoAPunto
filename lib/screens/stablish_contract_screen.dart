@@ -1,4 +1,5 @@
 import 'package:flutter/Material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:punto_a_punto/global/global.dart';
 import 'package:punto_a_punto/models/contrato.dart';
 import 'package:punto_a_punto/widgets/custom_appbar_1.dart';
@@ -28,6 +29,38 @@ class _StablishContractScreenState extends State<StablishContractScreen> {
       garantias: '',
       nombreComprador: '',
     );
+  }
+
+  DateTime selectedDateI = DateTime.now();
+
+  Future<void> _selectDateI(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: selectedDateI,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+    if (pickedDate != null && pickedDate != selectedDateI) {
+      setState(() {
+        selectedDateI = pickedDate;
+      });
+    }
+  }
+
+  DateTime selectedDateF = DateTime.now();
+
+  Future<void> _selectDateF(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: selectedDateF,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+    if (pickedDate != null && pickedDate != selectedDateF) {
+      setState(() {
+        selectedDateF = pickedDate;
+      });
+    }
   }
 
   @override
@@ -143,35 +176,27 @@ class _StablishContractScreenState extends State<StablishContractScreen> {
                       _contrato.frecuenciaDeProvision = value!;
                     },
                   ),
-                  TextFormField(
-                    decoration:
-                        const InputDecoration(labelText: 'Fecha de Inicio'),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Por favor, introduce la fecha de inicio';
-                      }
-                      return null;
+                  const Text("Fecha de inicio del contrato"),
+                  TextButton(
+                    onPressed: () async {
+                      await _selectDateI(context);
+                      _contrato.fechaInicio = selectedDateI;
                     },
-                    onSaved: (value) {
-                      // Aquí puedes convertir la cadena de texto en un objeto DateTime
-                      // Esto es solo un ejemplo básico, puedes necesitar un formato específico
-                      _contrato.fechaInicio = DateTime.parse(value!);
-                    },
+                    child: Text(
+                      '${selectedDateI.day}/${selectedDateI.month}/${selectedDateI.year}',
+                      style: const TextStyle(fontSize: 16, color: Colors.black),
+                    ),
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                        labelText: 'Fecha de Terminación'),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Por favor, introduce la fecha de terminación';
-                      }
-                      return null;
+                  const Text("Fecha de terminación del contrato"),
+                  TextButton(
+                    onPressed: () async {
+                      await _selectDateF(context);
+                      _contrato.fechaInicio = selectedDateI;
                     },
-                    onSaved: (value) {
-                      // Aquí puedes convertir la cadena de texto en un objeto DateTime
-                      // Esto es solo un ejemplo básico, puedes necesitar un formato específico
-                      _contrato.fechaTerminacion = DateTime.parse(value!);
-                    },
+                    child: Text(
+                      '${selectedDateF.day}/${selectedDateF.month}/${selectedDateF.year}',
+                      style: const TextStyle(fontSize: 16, color: Colors.black),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 50),
@@ -195,6 +220,7 @@ class _StablishContractScreenState extends State<StablishContractScreen> {
                                   Text('Contrato registrado correctamente'),
                             ),
                           );
+                          context.go('/home_screen');
                         }
                       },
                       child: const Center(
