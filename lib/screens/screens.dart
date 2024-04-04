@@ -11,6 +11,7 @@ export 'package:punto_a_punto/screens/lessons/lesson5.dart';
 export 'package:punto_a_punto/screens/lessons/lesson6.dart';
 export 'package:punto_a_punto/screens/lessons/lesson7.dart';
 export 'package:punto_a_punto/screens/lessons/lesson8.dart';
+export 'package:punto_a_punto/screens/lessons/lesson9.dart';
 export 'package:punto_a_punto/screens/school.dart';
 export 'package:punto_a_punto/screens/on_boarding.dart';
 export 'package:punto_a_punto/screens/home_screen.dart';

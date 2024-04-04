@@ -51,13 +51,13 @@ class Leccion3 extends StatelessWidget {
                     '\nExisten varios tipos de sociedades:',
                   ),
                   const Text(
-                      '\nConstitución de Asociación Civil:\n•\tContrato que otorgan dos o más personas para realizar un fin común que no forzosamente esta orientado a actividades financieras o de negocio.\n\nConstitución de Sociedad Civil:\n•\tContrato que otorgan dos o más personas para realizar un fin común de carácter económico sin intenciones de generar ganancias a partir de la compra-venta o algo relacionado.\n\nConstitución de Sociedad Mercantil:\n•\tContrato que otorgan dos o más personas para realizar un fin común que constituye una ganancia en el mercado, refiriéndose a actividades mercantiles.'),
+                      '\nConstitución de Asociación Civil:\n\t\t\t\t\t\t\t\t• Contrato que otorgan dos o más personas para realizar un fin común que no forzosamente esta orientado a actividades financieras o de negocio.\n\nConstitución de Sociedad Civil:\n\t\t\t\t\t\t\t\t• Contrato que otorgan dos o más personas para realizar un fin común de carácter económico sin intenciones de generar ganancias a partir de la compra-venta o algo relacionado.\n\nConstitución de Sociedad Mercantil:\n\t\t\t\t\t\t\t\t• Contrato que otorgan dos o más personas para realizar un fin común que constituye una ganancia en el mercado, refiriéndose a actividades mercantiles.'),
                   const Text(
                     '\nRequisitos',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Text(
-                      '\n•\tLlenar formato de datos para constituir una sociedad\n•\tIdentificación oficial de las partes (credencial de elector, pasaporte, cédula profesional).\n•\tCédula del registro federal de contribuyentes (RFC, copia de situación fiscal) de las partes.\n•\tClave única de registro de población (CURP) de las partes.\n•\tConstancia de autorización de denominación o razón social.'),
+                      '\n\t\t\t\t\t\t\t\t• Llenar formato de datos para constituir una sociedad\n\t\t\t\t\t\t\t\t• Identificación oficial de las partes (credencial de elector, pasaporte, cédula profesional).\n\t\t\t\t\t\t\t\t• Cédula del registro federal de contribuyentes (RFC, copia de situación fiscal) de las partes.\n\t\t\t\t\t\t\t\t• Clave única de registro de población (CURP) de las partes.\n\t\t\t\t\t\t\t\t• Constancia de autorización de denominación o razón social.'),
                   const Text(
                       '\nParte fundamental de este punto recae en el notario. El notario dará fe pública de la constitución de la sociedad a través de la redacción de la escritura constitutiva la que comprende los estatutos sociales, en los que se definen el tipo de sociedad que se formará, así como los derechos y obligaciones que los socios adquieren.'),
                   const Text(
@@ -65,7 +65,7 @@ class Leccion3 extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const Text(
-                      '\nPrevio a la firma de la escritura constitutiva:\n-\tMostrar la constancia de autorización de denominación o razón social\n\nSimultáneos a la firma de la escritura constitutiva:\n-\tTranscripción de la autorización para uso de la denominación o razón\n-\tConsignación de la cláusula sobre la posible admisión o no de extranjeros, incluir los requisitos contemplados en la Ley \n-\tVerificar las claves del Registro Federal de Contribuyentes de los socios o accionistas \n-\tConsignar los datos de identificación de los otorgantes.\n-\tFirma por todos los socios o accionistas ante la presencia del notario.'),
+                      '\nPrevio a la firma de la escritura constitutiva:\n\t\t\t\t\t\t\t\t- Mostrar la constancia de autorización de denominación o razón social\n\nSimultáneos a la firma de la escritura constitutiva:\n\t\t\t\t\t\t\t\t- Transcripción de la autorización para uso de la denominación o razón\n\t\t\t\t\t\t\t\t- Consignación de la cláusula sobre la posible admisión o no de extranjeros, incluir los requisitos contemplados en la Ley\n\t\t\t\t\t\t\t\t- Verificar las claves del Registro Federal de Contribuyentes de los socios o accionistas\n\t\t\t\t\t\t\t\t- Consignar los datos de identificación de los otorgantes.\n\t\t\t\t\t\t\t\t- Firma por todos los socios o accionistas ante la presencia del notario.'),
                   const Text(
                       '\n\nAl terminar el proceso, se obtiene nuestra Acta constitutiva.'),
                   Padding(

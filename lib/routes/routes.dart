@@ -100,5 +100,11 @@ final GoRouter appRouter = GoRouter(
         return const Leccion8();
       },
     ),
+    GoRoute(
+      path: '/lesson9',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Leccion9();
+      },
+    ),
   ],
 );
