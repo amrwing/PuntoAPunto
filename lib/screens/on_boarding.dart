@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
-import 'package:punto_a_punto/routes/routes.dart';
 import '../widgets/widgets.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -326,9 +325,8 @@ class _OnBoardingSlideshowState extends State<OnBoardingSlideshow> {
                                             Radius.circular(20))),
                                   ),
                                   onPressed: () async {
-                                    //NAVEGAR A REGISTRO EN ALGUNO DE LOS 2 CASOS
-
-                                    appRouter.go("/home_screen");
+                                    //NAVEGAR AL SLIDESHOW DE INFORMACIÓN DE LA APP
+                                    context.push("/school");
                                   },
                                   child: const Center(
                                     child: Text(
