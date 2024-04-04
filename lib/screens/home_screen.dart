@@ -329,7 +329,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: TextButton(
                             onPressed: () {
                               //LLEVAR A PAGINA DE MIS CURSOS
-                              context.push("/register_screen");
                             },
                             child: const Text(
                               "Mis cursos",
