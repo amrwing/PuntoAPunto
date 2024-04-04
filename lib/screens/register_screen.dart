@@ -42,6 +42,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
               key: formKey,
               child: ListView(
                 children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 10,
+                      bottom: 8,
+                    ),
+                    child: Image.asset(
+                      width: 80,
+                      height: 40,
+                      'assets/logos/ic_launcher.jpg', // Ruta del archivo SVG en assets
+                    ),
+                  ),
                   TextFormField(
                     initialValue: "Juan Antonio Moreno Muñoz",
                     decoration: const InputDecoration(labelText: 'Tu nombre'),

@@ -303,6 +303,17 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
+                  padding: const EdgeInsets.only(
+                    top: 10,
+                    bottom: 8,
+                  ),
+                  child: Image.asset(
+                    width: 80,
+                    height: 40,
+                    'assets/logos/ic_launcher.jpg', // Ruta del archivo SVG en assets
+                  ),
+                ),
+                Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
                     "¡Bienvenido ${usuarioGlobal.nombreUsuario.split(" ")[0]}!\nQueremos darte lo mejor",
