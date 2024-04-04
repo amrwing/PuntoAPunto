@@ -302,12 +302,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 8.0),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
-                    "¡Bienvenido!\nQueremos darte lo mejor",
+                    "¡Bienvenido ${usuarioGlobal.nombreUsuario.split(" ")[0]}!\nQueremos darte lo mejor",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 SingleChildScrollView(
@@ -556,6 +556,112 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(
                   height: 20,
+                ),
+                const Divider(
+                  height: 50,
+                  thickness: 1,
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Aprende más",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: SizedBox(
+                    height: 700,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: leccionesGlobales.length,
+                        itemBuilder: (context, index) => Card(
+                          surfaceTintColor: Colors.blue,
+                          elevation: 3,
+                          color: Colors.white,
+                          child: SizedBox(
+                            width: (MediaQuery.of(context).size.width < 1000)
+                                ? MediaQuery.of(context).size.width * 0.8
+                                : MediaQuery.of(context).size.width * 0.3,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                                top: 30,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Image.asset(
+                                              leccionesGlobales[index].ima,
+                                              width: 300,
+                                              height: 200,
+                                              fit: BoxFit.fill,
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          leccionesGlobales[index].nombre,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          leccionesGlobales[index].resumen,
+                                          style: const TextStyle(fontSize: 15),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  const Expanded(child: SizedBox()),
+                                  Align(
+                                    alignment: Alignment.bottomRight,
+                                    child: Row(
+                                      children: [
+                                        TextButton(
+                                          onPressed: () => context.push(
+                                              leccionesGlobales[index].path),
+                                          child: const Text(
+                                            "Me interesa",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                        ),
+                                        const Icon(
+                                          Icons.arrow_forward,
+                                          color: Colors.black,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,

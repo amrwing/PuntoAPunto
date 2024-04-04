@@ -19,7 +19,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String usuario = '';
   String rfcUsuario = '';
   String rfcEmpresa = '';
-  String regimenFiscal = 'Régimen de Actividades Empresariales y Profesionales';
+  String regimenFiscal = '';
   String sectorComercial = '';
   String telefonoEmpresa = '';
   String telefonoUsuario = '';
@@ -105,6 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8),
                     child: DropdownButtonFormField<String>(
+                      isExpanded: true,
                       value: regimenFiscal,
                       onChanged: (newValue) {
                         setState(() {
@@ -115,24 +116,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         '',
                         'Régimen General',
                         'Régimen Simplificado de Confianza ',
-                        'Régimen de Actividades Empresariales...',
+                        'Régimen de Actividades Empresariales',
                         'Régimen de Arrendamiento',
-                        'Régimen de Actividades Empresariales y Profesionales'
+                        'Régimen de Actividades Empresariales y Profesionales',
                         // Agrega más opciones según sea necesario
                       ].map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
-                          child: Text(
-                            value.length > 30
-                                ? '${value.substring(0, 30)}...'
-                                : value, // Limita la longitud del texto
-                          ),
+                          child: Text(value),
                         );
                       }).toList(),
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Régimen Fiscal',
-                      ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Por favor, selecciona un régimen fiscal';

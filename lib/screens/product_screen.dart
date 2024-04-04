@@ -165,6 +165,62 @@ class ProductScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Card(
+                    elevation: 3,
+                    color: Colors.white,
+                    child: SizedBox(
+                      width: (MediaQuery.of(context).size.width < 720)
+                          ? MediaQuery.of(context).size.width * 0.8
+                          : MediaQuery.of(context).size.width * 0.3,
+                      height: 500,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              "assets/images/contrato.jpg",
+                              fit: BoxFit.scaleDown,
+                            ),
+                            const Text(
+                              "¿Qué es un contrato de compra venta?",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20),
+                            ),
+                            const Text(
+                                "Aquí podrás ver los tipos de contratos que existen y lo que significan cada uno de los apartados de un contrato"),
+                            const Expanded(child: SizedBox()),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shadowColor: Colors.black,
+                                  elevation: 15,
+                                  backgroundColor:
+                                      const Color.fromRGBO(254, 217, 37, 1),
+                                  shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(20))),
+                                ),
+                                onPressed: () {
+                                  //LLEVAR A PAGINA DE LECCION
+                                  context.push("/lesson9");
+                                },
+                                child: const Center(
+                                  child: Text(
+                                    "Ver",
+                                    style: TextStyle(
+                                        color: Color.fromRGBO(38, 93, 166, 1),
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
