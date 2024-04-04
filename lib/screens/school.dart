@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../models/models.dart';
-import '../widgets/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -75,7 +74,6 @@ class _EscuelaState extends State<Escuela> {
   @override
   Widget build(BuildContext context) {
     final altura = MediaQuery.of(context).size.height * 0.7;
-    final ancho = MediaQuery.of(context).size.width * 0.8;
     return Material(
       child: SafeArea(
         child: Scaffold(
