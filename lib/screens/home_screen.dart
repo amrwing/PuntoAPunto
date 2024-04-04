@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:punto_a_punto/models/perfil_empresa.dart';
-import 'package:punto_a_punto/models/perfil_personal.dart';
+import '../models/models.dart';
 import 'package:punto_a_punto/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {

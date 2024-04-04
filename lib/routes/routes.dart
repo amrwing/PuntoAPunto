@@ -11,10 +11,17 @@ final GoRouter appRouter = GoRouter(
       },
     ),
     GoRoute(
-        path: '/onboarding_slideshow',
-        builder: (BuildContext context, GoRouterState state) {
-          return const OnBoardingSlideshow();
-        }),
+      path: '/onboarding_slideshow',
+      builder: (BuildContext context, GoRouterState state) {
+        return const OnBoardingSlideshow();
+      },
+    ),
+    GoRoute(
+      path: '/home_screen',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeScreen();
+      },
+    ),
     GoRoute(
       path: '/school',
       builder: (BuildContext context, GoRouterState state) {
@@ -22,9 +29,51 @@ final GoRouter appRouter = GoRouter(
       },
     ),
     GoRoute(
-      path: '/home_screen',
+      path: '/lesson1',
       builder: (BuildContext context, GoRouterState state) {
-        return const HomeScreen();
+        return const Leccion1();
+      },
+    ),
+    GoRoute(
+      path: '/lesson2',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Leccion2();
+      },
+    ),
+    GoRoute(
+      path: '/lesson3',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Leccion3();
+      },
+    ),
+    GoRoute(
+      path: '/lesson4',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Leccion4();
+      },
+    ),
+    GoRoute(
+      path: '/lesson5',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Leccion5();
+      },
+    ),
+    GoRoute(
+      path: '/lesson6',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Leccion6();
+      },
+    ),
+    GoRoute(
+      path: '/lesson7',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Leccion7();
+      },
+    ),
+    GoRoute(
+      path: '/lesson8',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Leccion8();
       },
     ),
   ],
