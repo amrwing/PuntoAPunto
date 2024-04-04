@@ -1,16 +1,11 @@
-# punto_a_punto
+# Punto A Punto
 
-A new Flutter project.
+## El 60% de los microempresarios manejan su negocio de manera informal, y ni siquiera piensan en digitalizarse
+#### Es por eso que Punto A Punto pone en marcha un programa de orientación en la practica para que las empresas formalizadas obtengan acceso a una red de conecte y de comercio
+#### para establecer contratos con proveedores de una manera facil y digital, pudiendo recibir recomendaciones basadas en filtros (tentativamente).
+#### El sistema está orientado a apoyar a aquél empresario que tiene dificultad para iniciar su negocio, aquel empresario que quiere digitalizar al menos la administración de sus
+#### potenciales proveedores.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Queremos que la experiencia de los usuarios sea amena, es por eso que lo llenamos de lecciones en cada sección de la app para que pueda seguir aprendiendo mientras realiza sus tratos.
+#### Si nuestros clientes crecen, nosotros también.
